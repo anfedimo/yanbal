@@ -1,0 +1,20 @@
+package co.sistemcobro.yanbal.ejb.impl;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.faces.model.SelectItem;
+
+import co.sistemcobro.yanbal.dao.RazonNoPagoDAO;
+import co.sistemcobro.yanbal.ejb.IRazonNoPagoEJBLocal;
+
+@Stateless
+public class RazonNoPagoEJB extends BaseEJB implements IRazonNoPagoEJBLocal {
+
+	@Override
+	public List<SelectItem> buscarRazonesPorTipificacion(Integer idTipificacion) throws Exception {
+		RazonNoPagoDAO razonNoPagoDAO = new RazonNoPagoDAO(dc_yanbal);
+		return razonNoPagoDAO.buscarRazones(idTipificacion);
+	}
+
+}

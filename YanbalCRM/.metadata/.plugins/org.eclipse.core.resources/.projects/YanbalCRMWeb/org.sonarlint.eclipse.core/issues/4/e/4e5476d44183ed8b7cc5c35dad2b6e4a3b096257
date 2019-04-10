@@ -1,0 +1,14 @@
+
+ysquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(€ÚìHÿœRMAJORZ
+CODE_SMELL
+xsquid:CommentedOutCodeLineC"<This block of commented-out lines of code should be removed.(—ÃÖBH€RMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(Þ¼«ÚûÿÿÿÿHRMAJORZ
+CODE_SMELL
+Šsquid:S001163"VRename this field "Observacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·×”ËýÿÿÿÿH‚RMINORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(²ÊÖ¡HƒRMINORZ
+CODE_SMELL
+hsquid:S1191"5Use classes from the Java API instead of Sun classes.(¶ÀÚêûÿÿÿÿH„RMAJORZ
+CODE_SMELL
+Ysquid:S1148m"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿH…RMINORZVULNERABILITY

@@ -1,0 +1,80 @@
+package co.sistemcobro.yanbal.ejb.impl;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+
+import co.sistemcobro.yanbal.bean.gestionCantidad;
+import co.sistemcobro.yanbal.dao.DashBoardDAO;
+import co.sistemcobro.yanbal.ejb.IDashBoardEJBLocal;
+
+
+@Stateless
+public class DashBoardEJB extends BaseEJB implements IDashBoardEJBLocal {
+
+	@Override
+	public List<gestionCantidad> gestionDiaACtual(String filtro) {
+		List<gestionCantidad> gestionCantidad = null;
+		DashBoardDAO ClienteDao = new DashBoardDAO(dc_yanbal);
+		try {
+			gestionCantidad = ClienteDao.buscarGestionesDia(filtro);
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return gestionCantidad;
+	}
+
+	@Override
+	public List<gestionCantidad> gestionTotal(String filtro) {
+		List<gestionCantidad> gestionCantidad = null;
+		DashBoardDAO ClienteDao = new DashBoardDAO(dc_yanbal);
+		try {
+			gestionCantidad = ClienteDao.buscarGestionesTotales(filtro);
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return gestionCantidad;
+	}
+
+	@Override
+	public List<gestionCantidad> gestionDiaAnterior(String filtro) {
+		List<gestionCantidad> gestionCantidad = null;
+		DashBoardDAO ClienteDao = new DashBoardDAO(dc_yanbal);
+		try {
+			gestionCantidad = ClienteDao.buscarGestionesDiaAnterior(filtro);
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return gestionCantidad;
+	}
+
+	@Override
+	public List<gestionCantidad> historicoGestiones(String filtro) {
+		List<gestionCantidad> gestionCantidad = null;
+		DashBoardDAO ClienteDao = new DashBoardDAO(dc_yanbal);
+		try {
+			gestionCantidad = ClienteDao.historicoCompromisos(filtro);
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return gestionCantidad;
+	}
+
+	@Override
+	public List<gestionCantidad> mejorCompromiso() {
+		List<gestionCantidad> gestionCantidad = null;
+		DashBoardDAO ClienteDao = new DashBoardDAO(dc_yanbal);
+		try {
+			gestionCantidad = ClienteDao.mejorCompromiso();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return gestionCantidad;
+	}
+
+}

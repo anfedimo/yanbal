@@ -1,0 +1,263 @@
+package co.sistemcobro.yanbal.bean;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.faces.application.Application;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.model.chart.Axis;
+import org.primefaces.model.chart.AxisType;
+import org.primefaces.model.chart.BarChartModel;
+import org.primefaces.model.chart.CategoryAxis;
+import org.primefaces.model.chart.ChartSeries;
+import org.primefaces.model.chart.LegendPlacement;
+import org.primefaces.model.chart.LineChartModel;
+import org.primefaces.model.chart.LineChartSeries;
+
+import co.sistemcobro.yanbal.bean.gestionCantidad;
+import co.sistemcobro.yanbal.ejb.IDashBoardEJBLocal;
+import co.sistemcobro.yanbal.session.LoginBean;
+
+@ManagedBean(name = "dashBoardBean")
+@ViewScoped
+public class DashBoardBean {
+
+	@EJB
+	private IDashBoardEJBLocal dashBoardEJB;
+	private BarChartModel gestionesDia;
+	private BarChartModel gestionesTotal;
+	private BarChartModel gestionesDiaAnterior;
+	private LineChartModel historicoCompromisos;
+	private List<gestionCantidad> lista;
+	private List<gestionCantidad> lista2;
+	private boolean grafica1;
+	private boolean grafica2;
+	private boolean grafica3;
+	private boolean grafica4;
+	private LoginBean loginBean;
+
+	@PostConstruct
+	public void init() {
+		grafica1 = false;
+		grafica2 = false;
+		grafica3 = false;
+		grafica4 = false;
+
+		if (FacesContext.getCurrentInstance() != null) {
+
+			FacesContext context = FacesContext.getCurrentInstance();
+			Application application = context.getApplication();
+			setLoginBean(application.evaluateExpressionGet(context, "#{loginBean}", LoginBean.class));
+			if (loginBean.getUsuarioHermes().getCodusuario() != null) {
+				int mayor = 0;
+				lista = dashBoardEJB.gestionDiaACtual(loginBean.getUsuarioHermes().getCodusuario().toString());
+				grafica1 = lista.isEmpty() ? false : true;
+				gestionesDia = initBarModel(lista);
+				gestionesDia.setTitle("Gestiones Dia Actual");
+				gestionesDia.setAnimate(true);
+				gestionesDia.setLegendPosition("s");
+				gestionesDia.setLegendPlacement(LegendPlacement.OUTSIDEGRID);
+				gestionesDia.setLegendCols(4);
+				Axis gestionesDiayAxis = gestionesDia.getAxis(AxisType.Y);
+				gestionesDiayAxis.setMin(0);
+				mayor = 0;
+				for (gestionCantidad cs : lista) {
+					if (cs.getCantidad() > mayor) {
+						mayor = cs.getCantidad();
+					}
+				}
+
+				gestionesDiayAxis.setMax(mayor + 5);
+				lista = dashBoardEJB.gestionDiaAnterior(loginBean.getUsuarioHermes().getCodusuario().toString());
+				grafica2 = lista.isEmpty() ? false : true;
+				gestionesDiaAnterior = initBarModel(lista);
+				gestionesDiaAnterior.setTitle("Gestiones Dia Anterior");
+				gestionesDiaAnterior.setAnimate(true);
+				gestionesDiaAnterior.setLegendPosition("s");
+				gestionesDiaAnterior.setLegendPlacement(LegendPlacement.OUTSIDEGRID);
+				gestionesDiaAnterior.setLegendCols(4);
+				Axis gestionesDiaAnterioryAxis = gestionesDiaAnterior.getAxis(AxisType.Y);
+				gestionesDiaAnterioryAxis.setMin(0);
+				mayor = 0;
+				for (gestionCantidad cs : lista) {
+					if (cs.getCantidad() > mayor) {
+						mayor = cs.getCantidad();
+					}
+				}
+				gestionesDiaAnterioryAxis.setMax(mayor + 5);
+
+				lista = dashBoardEJB.gestionTotal(loginBean.getUsuarioHermes().getCodusuario().toString());
+				grafica3 = lista.isEmpty() ? false : true;
+				gestionesTotal = initBarModel(lista);
+				gestionesTotal.setTitle("Gestiones Totales");
+				gestionesTotal.setAnimate(true);
+				gestionesTotal.setLegendPosition("s");
+				gestionesTotal.setLegendPlacement(LegendPlacement.OUTSIDEGRID);
+				gestionesTotal.setLegendCols(4);
+				Axis gestionesTotalyAxis = gestionesTotal.getAxis(AxisType.Y);
+				gestionesTotalyAxis.setMin(0);
+				mayor = 0;
+				for (gestionCantidad cs : lista) {
+					if (cs.getCantidad() > mayor) {
+						mayor = cs.getCantidad();
+					}
+				}
+				gestionesTotalyAxis.setMax(mayor + 5);
+				lista = dashBoardEJB.historicoGestiones(loginBean.getUsuarioHermes().getCodusuario().toString());
+				lista2 = dashBoardEJB.mejorCompromiso();
+				grafica4 = lista2.isEmpty() ? false : true;
+				historicoCompromisos = initLinearModel(lista, lista2);
+				historicoCompromisos.setTitle("Compromisos Últimos 7 dias");
+				historicoCompromisos.setAnimate(true);
+				historicoCompromisos.setLegendPosition("s");
+				historicoCompromisos.setResetAxesOnResize(true);
+				historicoCompromisos.getAxes().put(AxisType.X, new CategoryAxis("Dias"));
+				historicoCompromisos.setLegendPlacement(LegendPlacement.OUTSIDEGRID);
+				historicoCompromisos.setLegendCols(4);
+				Axis yAxis = historicoCompromisos.getAxis(AxisType.Y);
+				yAxis.setMin(0);
+				mayor = 0;
+				for (gestionCantidad cs : lista2) {
+					if (cs.getCantidad() > mayor) {
+						mayor = cs.getCantidad();
+					}
+				}
+				yAxis.setMax(mayor + 5);
+			}
+		}
+	}
+
+	private LineChartModel initLinearModel(List<gestionCantidad> gestiones, List<gestionCantidad> mejores) {
+		LineChartModel model = new LineChartModel();
+		ChartSeries series1 = new LineChartSeries();
+		series1.setLabel("Compromisos");
+		ChartSeries series2 = new LineChartSeries();
+		series2.setLabel("Meta");
+		model.setSeriesColors("009933,0000ff,ff9900");
+		ChartSeries series3 = new LineChartSeries();
+		series3.setLabel("Mejor Cant Comp");
+		int t = 1;
+		for (gestionCantidad gd : gestiones) {
+
+			series1.set(gd.getNombre(), gd.getCantidad());
+
+		}
+		for (gestionCantidad gd : mejores) {
+
+			series3.set(gd.getNombre(), gd.getCantidad());
+			series2.set(gd.getNombre(), 25);
+
+		}
+		model.addSeries(series3);
+		model.addSeries(series1);
+		model.addSeries(series2);
+		return model;
+	}
+
+	private BarChartModel initBarModel(List<gestionCantidad> gestiones) {
+		BarChartModel model = new BarChartModel();
+
+		for (gestionCantidad gd : gestiones) {
+			ChartSeries gestion = new ChartSeries();
+			gestion.setLabel(gd.getNombre());
+			gestion.set("Tipificacion", gd.getCantidad());
+			model.addSeries(gestion);
+
+		}
+
+		return model;
+	}
+
+	public BarChartModel getGestionesDia() {
+		return gestionesDia;
+	}
+
+	public void setGestionesDia(BarChartModel gestionesDia) {
+		this.gestionesDia = gestionesDia;
+	}
+
+	public BarChartModel getGestionesTotal() {
+		return gestionesTotal;
+	}
+
+	public void setGestionesTotal(BarChartModel gestionesTotal) {
+		this.gestionesTotal = gestionesTotal;
+	}
+
+	public BarChartModel getGestionesDiaAnterior() {
+		return gestionesDiaAnterior;
+	}
+
+	public void setGestionesDiaAnterior(BarChartModel gestionesDiaAnterior) {
+		this.gestionesDiaAnterior = gestionesDiaAnterior;
+	}
+
+	public LineChartModel getHistoricoCompromisos() {
+		return historicoCompromisos;
+	}
+
+	public void setHistoricoCompromisos(LineChartModel historicoCompromisos) {
+		this.historicoCompromisos = historicoCompromisos;
+	}
+
+	public List<gestionCantidad> getLista() {
+		return lista;
+	}
+
+	public void setLista(List<gestionCantidad> lista) {
+		this.lista = lista;
+	}
+
+	public boolean isGrafica1() {
+		return grafica1;
+	}
+
+	public void setGrafica1(boolean grafica1) {
+		this.grafica1 = grafica1;
+	}
+
+	public boolean isGrafica2() {
+		return grafica2;
+	}
+
+	public void setGrafica2(boolean grafica2) {
+		this.grafica2 = grafica2;
+	}
+
+	public boolean isGrafica3() {
+		return grafica3;
+	}
+
+	public void setGrafica3(boolean grafica3) {
+		this.grafica3 = grafica3;
+	}
+
+	public boolean isGrafica4() {
+		return grafica4;
+	}
+
+	public void setGrafica4(boolean grafica4) {
+		this.grafica4 = grafica4;
+	}
+
+	public LoginBean getLoginBean() {
+		return loginBean;
+	}
+
+	public void setLoginBean(LoginBean loginBean) {
+		this.loginBean = loginBean;
+	}
+
+	public List<gestionCantidad> getLista2() {
+		return lista2;
+	}
+
+	public void setLista2(List<gestionCantidad> lista2) {
+		this.lista2 = lista2;
+	}
+
+}

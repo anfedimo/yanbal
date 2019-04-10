@@ -1,0 +1,13 @@
+
+squid:S18714"LThis branch's code block is the same as the block for the branch on line 48.(Ïà¾àıÿÿÿÿH„‡RMAJORZ
+CODE_SMELL
+”squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(Ñ¸¡ûÿÿÿÿH…‡RMINORZ
+CODE_SMELL
+squid:S1319S"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(–ÌıH†‡RMINORZ
+CODE_SMELL
+—squid:S1192*"aDefine a constant instead of duplicating this literal "Error postconstructor auxiliares" 3 times.(ÏÑÆ×øÿÿÿÿH‡‡RCRITICALZ
+CODE_SMELL
+ squid:S1319W"rThe type of the "estados" object should be an interface such as "List" rather than the implementation "ArrayList".(üé¹ÍHˆ‡RMINORZ
+CODE_SMELL
+€squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Òíú†8¨ÆÒø-H‰‡RMAJORZ
+CODE_SMELL

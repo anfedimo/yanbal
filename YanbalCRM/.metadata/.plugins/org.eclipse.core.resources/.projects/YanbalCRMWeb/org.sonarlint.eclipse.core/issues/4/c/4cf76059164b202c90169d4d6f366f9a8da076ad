@@ -1,0 +1,22 @@
+
+hsquid:S1191"5Use classes from the Java API instead of Sun classes.(¶ÀÚêûÿÿÿÿHÜ›RMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(·İ‚«ÿÿÿÿÿ8ªØ÷-HÚ›RMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLine|"<This block of commented-out lines of code should be removed.(áÙíÄúÿÿÿÿ8ªØ÷-HÙ›RMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLinez"<This block of commented-out lines of code should be removed.(”¢í•şÿÿÿÿ8ªØ÷-HØ›RMAJORZ
+CODE_SMELL
+€squid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(ú¬”å8ªØ÷-Hà›RMAJORZ
+CODE_SMELL
+asquid:S1148ƒ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ªØ÷-H×›RMINORZVULNERABILITY
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(²ÊÖ¡Hß›RMINORZ
+CODE_SMELL
+Šsquid:S00116<"VRename this field "Observacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·×”ËıÿÿÿÿHÛ›RMINORZ
+CODE_SMELL
+€squid:CommentedOutCodeLinen"<This block of commented-out lines of code should be removed.(€ï÷Š8ªØ÷-HÖ›RMAJORZ
+CODE_SMELL
+squid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¬¼«ıÿÿÿÿHŞ›RMINORZ
+CODE_SMELL
+~squid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(æ€ÀóıÿÿÿÿHİ›RMAJORZ
+CODE_SMELL

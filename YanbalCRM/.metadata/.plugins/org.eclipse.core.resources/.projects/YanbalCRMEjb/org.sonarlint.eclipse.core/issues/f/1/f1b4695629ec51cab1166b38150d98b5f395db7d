@@ -1,0 +1,5 @@
+
+£squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÜûÇ¨ıÿÿÿÿH„RMINORZ
+CODE_SMELL
+…squid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ëáĞıÿÿÿÿH…RMINORZ
+CODE_SMELL

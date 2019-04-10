@@ -1,0 +1,104 @@
+
+zsquid:CommentedOutCodeLineî"<This block of commented-out lines of code should be removed.(“Ö¹¨Hª›RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine¿"<This block of commented-out lines of code should be removed.(ƒ·»áH±›RMAJORZ
+CODE_SMELL
+Wsquid:S2200œ"/Only the sign of the result should be examined.(ÃÑðH½›RMINORZBUG
+squid:S1192¨"XDefine a constant instead of duplicating this literal "PF('dlComite').show();" 13 times.(Ð»ªûÿÿÿÿHž›RCRITICALZ
+CODE_SMELL
+Zsquid:S1481g"'Remove this unused "ob" local variable.(üÏàûÿÿÿÿH·›RMINORZ
+CODE_SMELL
+`squid:S1481f"2Remove this unused "obligacionTMP" local variable.(ÔÉÁÇH¸›RMINORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineW"<This block of commented-out lines of code should be removed.(×š²øH£›RMAJORZ
+CODE_SMELL
+\squid:S1481ó"-Remove this unused "fechaTmp" local variable.(±Þ†ÆH»›RMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLine—"<This block of commented-out lines of code should be removed.(£âì€ùÿÿÿÿH©›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(²ÊÖ¡HÐ›RMINORZ
+CODE_SMELL
+squid:S1192§"XDefine a constant instead of duplicating this literal "frmComite:pnlDlMensaje" 13 times.(ã¨¡žúÿÿÿÿHŸ›RCRITICALZ
+CODE_SMELL
+squid:CommentedOutCodeLine¼"<This block of commented-out lines of code should be removed.(—Ï¶ÜýÿÿÿÿH°›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(µœ„HÒ›RMINORZ
+CODE_SMELL
+·squid:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ü¸Ê úÿÿÿÿHÄ›RCRITICALZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine÷"<This block of commented-out lines of code should be removed.(šûù¯H«›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(Ð²æHÑ›RMINORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(ô‡çàHÎ›RMINORZ
+CODE_SMELL
+psquid:S1854‰"<Remove this useless assignment to local variable "fechaTmp".(‘ÞÕ¯ÿÿÿÿÿHÌ›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(ÎßëÒHÏ›RMINORZ
+CODE_SMELL
+‰squid:S3776£"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(©ÚÍÏüÿÿÿÿH¼›RCRITICALZ
+CODE_SMELL
+squid:CommentedOutCodeLineÊ"<This block of commented-out lines of code should be removed.(áÙíÄúÿÿÿÿH´›RMAJORZ
+CODE_SMELL
+osquid:S1854f"ARemove this useless assignment to local variable "obligacionTMP".(ÔÉÁÇHÅ›RMAJORZ
+CODE_SMELL
+psquid:S1854‚"<Remove this useless assignment to local variable "fechaTmp".(‘ÞÕ¯ÿÿÿÿÿHË›RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine²"<This block of commented-out lines of code should be removed.(ú¬”åH¯›RMAJORZ
+CODE_SMELL
+asquid:S1481ñ"-Remove this unused "cantidad" local variable.(’§ÕÿÿÿÿÿHº›RMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLineý"<This block of commented-out lines of code should be removed.(þº·‹ýÿÿÿÿH¬›RMAJORZ
+CODE_SMELL
+ksquid:S1854ó"<Remove this useless assignment to local variable "fechaTmp".(±Þ†ÆHÇ›RMAJORZ
+CODE_SMELL
+_squid:S1135R"2Complete the task associated to this TODO comment.(‹™—íH¶›RINFOZ
+CODE_SMELL
+squid:CommentedOutCodeLine§"<This block of commented-out lines of code should be removed.(€›Û×ûÿÿÿÿH¥›RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine«"<This block of commented-out lines of code should be removed.(‡Ü—øÿÿÿÿH¦›RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(©›šæH¤›RMAJORZ
+CODE_SMELL
+]squid:S1172à")Remove this unused method parameter "ob".(’©‹ÝüÿÿÿÿHÁ›RMAJORZ
+CODE_SMELL
+‹squid:UselessImportCheck"PRemove this unused import 'com.sun.mail.imap.IMAPMessage.FetchProfileCondition'.(“Þø‚HÔ›RMINORZ
+CODE_SMELL
+tsquid:S1854á"@Remove this useless assignment to local variable "listaTempora".(«‹¹ÚùÿÿÿÿHÆ›RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine÷"<This block of commented-out lines of code should be removed.(Ò¢þÅÿÿÿÿÿH¨›RMAJORZ
+CODE_SMELL
+Wsquid:S2200³"/Only the sign of the result should be examined.(ž¦«ªH¾›RMINORZBUG
+qsquid:S2583¬"DChange this condition so that it does not always evaluate to "false"(á‰¢ÑþÿÿÿÿHµ›RMAJORZBUG
+‹squid:S1192Ü"TDefine a constant instead of duplicating this literal "frmComite:pnlComite" 5 times.(‹«µ¤ýÿÿÿÿH ›RCRITICALZ
+CODE_SMELL
+squid:CommentedOutCodeLineŠ"<This block of commented-out lines of code should be removed.(þº·‹ýÿÿÿÿH®›RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineã"<This block of commented-out lines of code should be removed.(É¹ÛüÿÿÿÿÿH§›RMAJORZ
+CODE_SMELL
+hsquid:S1191"5Use classes from the Java API instead of Sun classes.(¶ÀÚêûÿÿÿÿH›RMAJORZ
+CODE_SMELL
+esquid:S1481á"1Remove this unused "listaTempora" local variable.(«‹¹ÚùÿÿÿÿH¹›RMINORZ
+CODE_SMELL
+psquid:S1854ü"<Remove this useless assignment to local variable "fechaTmp".(‘ÞÕ¯ÿÿÿÿÿHÊ›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(”¬ééHÍ›RMINORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(ÙÝÀÐH¢›RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(þº·‹ýÿÿÿÿH­›RMAJORZ
+CODE_SMELL
+\squid:S2200º"/Only the sign of the result should be examined.(±·Á¶ûÿÿÿÿH¿›RMINORZBUG
+§squid:S2159¬"zRemove this call to "equals"; comparisons against null always return false; consider using '== null' to check for nullity.(á‰¢ÑþÿÿÿÿH¡›RMAJORZBUG
+squid:CommentedOutCodeLineÈ"<This block of commented-out lines of code should be removed.(ÉŒÏŸúÿÿÿÿH³›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"RRemove this unused import 'co.sistemcobro.yanbal.constante.GrupoTIpificacionEnum'.(†ŽÿàHÓ›RMINORZ
+CODE_SMELL
+Wsquid:S2200Á"/Only the sign of the result should be examined.(™í…‡HÀ›RMINORZBUG
+Zsquid:S1148Ñ"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÕ›RMINORZVULNERABILITY
+msquid:S1854ò"9Remove this useless assignment to local variable "cuota".(ð±ãàøÿÿÿÿHÈ›RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÁ"<This block of commented-out lines of code should be removed.(èª¾ÊþÿÿÿÿH²›RMAJORZ
+CODE_SMELL
+psquid:S1854ñ"<Remove this useless assignment to local variable "cantidad".(’§ÕÿÿÿÿÿHÉ›RMAJORZ
+CODE_SMELL

@@ -1,0 +1,10 @@
+
+Ysquid:S1148m"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHöšRMINORZVULNERABILITY
+hsquid:S1191"5Use classes from the Java API instead of Sun classes.(¶ÀÚêûÿÿÿÿHðšRMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLineZ"<This block of commented-out lines of code should be removed.(Þ¼«ÚûÿÿÿÿHñšRMAJORZ
+CODE_SMELL
+Šsquid:S001160"VRename this field "Observacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·×”ËýÿÿÿÿHõšRMINORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(õ’Ç–HòšRMAJORZ
+CODE_SMELL

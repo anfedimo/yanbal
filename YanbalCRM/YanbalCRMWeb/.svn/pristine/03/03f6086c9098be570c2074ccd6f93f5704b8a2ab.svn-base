@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+
+	<h:outputStylesheet library="css" name="./resources/css/style.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<script type="text/javascript">
+		$(document)
+				.ready(
+						function() {
+
+							$
+									.getJSON(
+											'http://localhost/apiagentbox?action=chur&amp;cod=LE&amp;comm=FIN_LLAMADA',
+											function(res) {
+
+												res = JSON.stringify(res);
+												var status = JSON.parse(res);
+											});
+						});
+	</script>
+</h:head>
+
+<body>
+
+	<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+		template="../../resources/templates/templateLogin.xhtml">
+		<ui:define name="top">
+
+		</ui:define>
+
+		<ui:define name="left">
+
+		</ui:define>
+
+		<ui:define name="content">
+			<center>
+				<h1>Gesti&oacute;n finalizada exitosamente, por favor cerrar esta pestaña...</h1>
+
+
+				
+			</center>
+
+
+
+		</ui:define>
+
+	</ui:composition>
+
+</body>
+</html>

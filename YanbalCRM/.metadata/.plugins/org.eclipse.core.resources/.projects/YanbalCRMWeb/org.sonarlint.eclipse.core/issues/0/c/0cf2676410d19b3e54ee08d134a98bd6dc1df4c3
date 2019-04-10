@@ -1,0 +1,32 @@
+
+bsquid:S10665"/Merge this if statement with the enclosing one.(­É‰…ıÿÿÿÿH‹„RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(Š¥•×HŒ„RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineO"<This block of commented-out lines of code should be removed.(è€±H„RMAJORZ
+CODE_SMELL
+|squid:HiddenFieldCheckM">Rename "obligacion" which hides the field declared at line 38.(–ˆ»ôÿÿÿÿÿH„RMAJORZ
+CODE_SMELL
+bsquid:S1481M"/Remove this unused "obligacion" local variable.(–ˆ»ôÿÿÿÿÿH„RMINORZ
+CODE_SMELL
+ƒsquid:S00100²"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëùåõüÿÿÿÿH„RMINORZ
+CODE_SMELL
+}squid:S00100¶"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä¯ÃhH‘„RMINORZ
+CODE_SMELL
+Šsquid:S00116!"[Rename this field "estado_solicitud" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­’Ş×H’„RMINORZ
+CODE_SMELL
+squid:S00116$"^Rename this field "SolicitudFacturaEJB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ È«H“„RMINORZ
+CODE_SMELL
+€squid:S00117¶"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä¯ÃhH”„RMINORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(Ğ²æH•„RMINORZ
+CODE_SMELL
+Ysquid:S1148F"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿH–„RMINORZVULNERABILITY
+hsquid:S1948%"2Make "listObligaciones" transient or serializable.(©ÏÙ«øÿÿÿÿH—„RCRITICALZ
+CODE_SMELL
+]squid:S1948&",Make "obligacion" transient or serializable.(ÄşƒÉH˜„RCRITICALZ
+CODE_SMELL
+qsquid:S1948'";Make "listFacturasSeleccionadas" transient or serializable.(½øïâúÿÿÿÿH™„RCRITICALZ
+CODE_SMELL
+asquid:S1948)"+Make "loginBean" transient or serializable.(š²„¢üÿÿÿÿHš„RCRITICALZ
+CODE_SMELL

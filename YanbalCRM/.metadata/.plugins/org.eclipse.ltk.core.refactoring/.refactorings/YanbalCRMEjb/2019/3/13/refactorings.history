@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;co.sistemcobro.yanbal.bean.ObligacionExpertis&apos; to &apos;ObligacionYanbal&apos;&#x0D;&#x0A;- Original project: &apos;YanbalCRMEjb&apos;&#x0D;&#x0A;- Original element: &apos;co.sistemcobro.yanbal.bean.ObligacionExpertis&apos;&#x0D;&#x0A;- Renamed element: &apos;co.sistemcobro.yanbal.bean.ObligacionYanbal&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ObligacionExpertis&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/ejbModule&lt;co.sistemcobro.yanbal.bean{ObligacionExpertis.java[ObligacionExpertis" matchStrategy="1" name="ObligacionYanbal" qualified="false" references="true" similarDeclarations="false" stamp="1553700986281" textual="false" version="1.0"/>
+</session>

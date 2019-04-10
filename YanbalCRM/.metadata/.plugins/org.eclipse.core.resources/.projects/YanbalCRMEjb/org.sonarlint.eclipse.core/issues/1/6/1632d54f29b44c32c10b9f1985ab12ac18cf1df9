@@ -1,0 +1,11 @@
+
+£squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¶ú×øÿÿÿÿHÏ‚RMINORZ
+CODE_SMELL
+zsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¶ú×øÿÿÿÿHĞ‚RMAJORZ
+CODE_SMELL
+zsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.( ÀŸÇıÿÿÿÿHÑ‚RMAJORZ
+CODE_SMELL
+zsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Øºó¨şÿÿÿÿHÒ‚RMAJORZ
+CODE_SMELL
+…squid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ÀŸÇıÿÿÿÿHÓ‚RMINORZ
+CODE_SMELL

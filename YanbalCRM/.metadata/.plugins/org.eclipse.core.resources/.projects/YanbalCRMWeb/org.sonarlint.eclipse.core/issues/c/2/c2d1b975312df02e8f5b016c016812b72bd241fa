@@ -1,0 +1,44 @@
+
+asquid:S2093¥"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿH‹”RCRITICALZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineo"<This block of commented-out lines of code should be removed.(†€éˆH‘”RMAJORZ
+CODE_SMELL
+csquid:S1191"5Use classes from the Java API instead of Sun classes.(ëÞï®H‰”RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(±¤‚ÈH””RMAJORZ
+CODE_SMELL
+nsquid:S18544"@Remove this useless assignment to local variable "usuarioLogin".(¿ÙãŠHž”RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine‘"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿH˜”RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine°"<This block of commented-out lines of code should be removed.(›­•ÏÿÿÿÿÿH›”RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineV"<This block of commented-out lines of code should be removed.(ä¼â…H”RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(ëÏÄßH”RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLinet"<This block of commented-out lines of code should be removed.(àÁÇôH“”RMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(Ô¾Í¸üÿÿÿÿH”RMAJORZ
+CODE_SMELL
+‡squid:S1192@"WDefine a constant instead of duplicating this literal "/login.xhtml?response=" 5 times.(ÝÊøHŠ”RCRITICALZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineR"<This block of commented-out lines of code should be removed.(àÁÇôHŒ”RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLine«"<This block of commented-out lines of code should be removed.(’’¦|Hš”RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine†"<This block of commented-out lines of code should be removed.(ëÏÄßH–”RMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLiner"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿH’”RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine©"<This block of commented-out lines of code should be removed.(é¼ÛºH™”RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(±¤‚ÈHŽ”RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineŽ"<This block of commented-out lines of code should be removed.(†€éˆH—”RMAJORZ
+CODE_SMELL
+²squid:S1186("€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶îH”RCRITICALZ
+CODE_SMELL
+squid:CommentedOutCodeLine‚"<This block of commented-out lines of code should be removed.(Ô¾Í¸üÿÿÿÿH•”RMAJORZ
+CODE_SMELL
+osquid:S2259Ç"BA "NullPointerException" could be thrown; "conn" is nullable here.(öÙéûÿÿÿÿHœ”RMAJORZBUG

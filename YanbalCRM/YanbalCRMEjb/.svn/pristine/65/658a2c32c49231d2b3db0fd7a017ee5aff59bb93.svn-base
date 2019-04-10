@@ -1,0 +1,231 @@
+package co.sistemcobro.yanbal.dao;
+
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
+
+import co.sistemcobro.yanbal.bean.Comite;
+import co.sistemcobro.yanbal.bean.ComiteEstado;
+import co.sistemcobro.yanbal.bean.FacturaGestion;
+import co.sistemcobro.yanbal.bean.Gestion;
+import co.sistemcobro.yanbal.bean.Motivo;
+import co.sistemcobro.yanbal.bean.ObligacionGestion;
+
+public class GestionDAO extends BaseDAO {
+
+	private static Logger logger = Logger.getLogger(GestionDAO.class);
+
+	public GestionDAO(DataSource ds) {
+		super(ds);
+	}
+
+	
+
+	public Integer insertarGestion(Gestion gestion) throws Exception {
+		Integer idGestion = null;
+
+		StringBuilder varname1 = new StringBuilder();
+		varname1.append(" INSERT INTO yanbal.gestion ");
+		varname1.append(" ( ");
+
+		varname1.append(" gest_idtipificacion, ");// 1
+		varname1.append(" gest_idcliente, "); // 6
+		varname1.append(" gest_fechainiciollamada, "); // 7
+		varname1.append(" gest_fechafinllamada, "); // 8
+		varname1.append(" gest_telefonomarcado, "); // 9
+		varname1.append(" gest_asesor , "); // 11
+		varname1.append(" gest_valorpromesa , "); // 12
+		varname1.append(" gest_fechapromesa , "); // 13
+		varname1.append(" gest_observacion , "); // 17
+		varname1.append(" gest_idcall , "); // 19
+		varname1.append(" gest_idusuariocrea, "); // 21
+		varname1.append(" gest_fechacrea , "); // 22
+		varname1.append(" gest_estado "); // 25
+		varname1.append(" ) ");
+		varname1.append("VALUES ( ");
+		varname1.append(" ?,"); // 1
+		varname1.append(" ?,"); // 6
+		varname1.append(" ?,"); // 7
+		varname1.append(" ?,"); // 8
+		varname1.append(" ?,"); // 9
+		varname1.append(" ?,"); // 11
+		varname1.append(" ?,"); // 12
+		varname1.append(" ?,"); // 13
+		varname1.append(" ?,"); // 17
+		varname1.append(" ?,"); // 19
+		varname1.append(" ?,"); // 21
+		varname1.append(" GETDATE(),"); // 22
+		varname1.append(" ?"); // 25
+		varname1.append(" )");
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(varname1.toString(), Statement.RETURN_GENERATED_KEYS);
+			int t = 1;
+
+			// idtipificacion// 1
+			if (gestion.getIdtipificacion() != null) {
+				ps.setInt(t++, gestion.getIdtipificacion());
+			} else {
+				ps.setNull(t++, java.sql.Types.INTEGER);
+			}
+
+			// Idcliente// 6
+			if (gestion.getIdcliente() != null) {
+				ps.setString(t++, gestion.getIdcliente());
+			} else {
+				ps.setNull(t++, java.sql.Types.VARCHAR);
+			}
+
+			// fechainiciollamada// 7
+			if (gestion.getFechainiciollamada() != null) {
+				ps.setTimestamp(t++, gestion.getFechainiciollamada());
+			} else {
+				ps.setNull(t++, java.sql.Types.TIMESTAMP);
+			}
+
+			// fechafinllamada// 8
+
+			if (gestion.getFechainiciollamada() != null) {
+				ps.setTimestamp(t++, gestion.getFechainiciollamada());
+			} else {
+				ps.setNull(t++, java.sql.Types.TIMESTAMP);
+			}
+
+			// Telefonomarcado// 9
+			if (gestion.getTelefonomarcado() != null) {
+				ps.setString(t++, gestion.getTelefonoagendamiento());
+			} else {
+				ps.setNull(t++, java.sql.Types.VARCHAR);
+			}
+
+			// asesor// 11
+			if (gestion.getAsesor() != null) {
+				ps.setString(t++, gestion.getAsesor());
+			} else {
+				ps.setNull(t++, java.sql.Types.VARCHAR);
+			}
+
+			// Valor promesa// 12
+			if (gestion.getValorpromesa() != null) {
+				ps.setBigDecimal(t++, gestion.getValorpromesa());
+			} else {
+				ps.setNull(t++, java.sql.Types.NUMERIC);
+			}
+
+			// fechapromesa//13
+			if (gestion.getFechapromesa() != null) {
+				ps.setTimestamp(t++, gestion.getFechapromesa());
+			} else {
+				ps.setNull(t++, java.sql.Types.TIMESTAMP);
+			}
+
+			// Observacion// 17
+			if (gestion.getObservacion() != null) {
+				ps.setString(t++, gestion.getObservacion());
+			} else {
+				ps.setNull(t++, java.sql.Types.VARCHAR);
+			}
+
+			// Idcall// 19
+			if (gestion.getIdcall() != null) {
+				ps.setString(t++, gestion.getIdcall());
+			} else {
+				ps.setNull(t++, java.sql.Types.VARCHAR);
+			}
+
+			// Idusuariocrea// 21
+			if (gestion.getIdusuariocrea() != null) {
+				ps.setInt(t++, gestion.getIdusuariocrea());
+			} else {
+				ps.setNull(t++, java.sql.Types.INTEGER);
+			}
+
+			// fechacrea// 22
+
+			// estado// 25
+			if (gestion.getEstado() != null) {
+				ps.setInt(t++, gestion.getEstado());
+			} else {
+				ps.setNull(t++, java.sql.Types.INTEGER);
+			}
+
+			// ps.setInt(t, gestion.getId());
+			ps.executeUpdate();
+			rs = ps.getGeneratedKeys();
+
+			if (rs.next()) {
+				idGestion = rs.getInt(1);
+			}
+			closeConexion();
+
+		} catch (
+
+		SQLException e) {
+			logger.error("SQLException Error SQL al tratar de insertar la gestion " + e.toString(),
+					e.fillInStackTrace());
+			throw new Exception("SQLException Error SQL al tratar de insertar la gestion " + ps.toString(),
+					e.getCause());
+		} catch (Exception e) {
+			logger.error("Exception Error  al tratar de insertar la gestion " + e.toString(), e.fillInStackTrace());
+			throw new Exception("Exception Error al tratar de insertar la gestion : " + e.getStackTrace(),
+					e.getCause());
+		} finally {
+			closeConexion();
+			logger.info("finalizo dao!");
+		}
+		return idGestion;
+	}
+
+	public Integer insertarObligacionGestion(List<FacturaGestion> facturaGestion, Gestion gestion, Integer idGestion) throws Exception {
+		Integer idObligacionGestion = 0;
+
+		StringBuilder varname1 = new StringBuilder();
+		varname1.append("INSERT INTO [yanbal].[obligacion_gestion]");
+		varname1.append("([oblg_idgestion],[oblg_idobligacion],[oblg_idusuariocrea]");
+		varname1.append(",[oblg_fechacrea],[oblg_estado])");
+		varname1.append("VALUES");
+		varname1.append("(?,?,?,GETDATE(),2)  ");
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(varname1.toString());
+			for (FacturaGestion factura : facturaGestion){
+				int t = 1;
+				ps.setInt(t++, idGestion);
+				ps.setInt(t++, factura.getId());
+				ps.setInt(t++, gestion.getIdusuariocrea());
+				
+				ps.executeUpdate();
+
+			}
+						
+			closeConexion();
+
+		} catch (
+
+		SQLException e) {
+			logger.error("SQLException Error SQL al tratar de insertar la gestion " + e.toString(),
+					e.fillInStackTrace());
+			throw new Exception("SQLException Error SQL al tratar de insertar la gestion " + ps.toString(),
+					e.getCause());
+		} catch (Exception e) {
+			logger.error("Exception Error  al tratar de insertar la gestion " + e.toString(), e.fillInStackTrace());
+			throw new Exception("Exception Error al tratar de insertar la gestion : " + e.getStackTrace(),
+					e.getCause());
+		} finally {
+			closeConexion();
+			logger.info("finalizo dao!");
+		}
+		
+		return idObligacionGestion;
+
+		
+
+	}
+}

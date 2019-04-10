@@ -1,0 +1,160 @@
+#top {
+	position: relative;
+		  background: -webkit-linear-gradient(right, F7954E, #FF6900);
+  background: -moz-linear-gradient(right, #F7954E, #FF6900);
+  background: -o-linear-gradient(right, #F7954E, #FF6900);
+  background: linear-gradient(to left, #F7E2D3, #FF6900);
+	color: white;
+	padding: 5px;
+	margin: 2px 2px 2px 2px;
+}
+
+#bottom {
+	position: relative;
+	background-color: #F2B98F;
+	padding: 10px;
+	margin: 10px 0px 0px 0px;
+
+}
+
+#left {
+	float: left;
+	  background: -webkit-linear-gradient(0deg, #FF6900, #FF6900);
+  background: -moz-linear-gradient(0deg, #F9BD93, #FF6900);
+  background: -o-linear-gradient(0deg, #F7954E, #FF6900);
+  background: linear-gradient(0deg, #F7E2D3, #FF6900);
+	padding: 5px;
+	color: white;
+	width: 170px;
+	height: 972px;
+	margin: 2px 2px 2px 2px;
+}
+
+#right {
+	float: right;
+	background-color: #ece3a5;
+	padding: 5px;
+	width: 150px;
+}
+
+.center_content {
+	position: relative;
+	background-color: #dddddd;
+	padding: 5px;
+}
+
+.left_content {
+	/* background-color: #dddddd; */
+	padding: 5px;
+	margin-left: 170px;
+	overflow-y: scroll;
+	height: 591px;
+}
+
+.content {
+	padding: 5px;
+}
+
+.right_content {
+	background-color: #dddddd;
+	padding: 5px;
+	margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover {
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.highlightTableRow {
+	background: #fb6464 !important;
+	font-weight: bold;
+}
+
+.redColoredPanel .ui-widget-header {
+	background: #fb6464 !important;
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+#header {
+	float: right;
+	margin-top: 2%;
+	/* width: 500px; */
+	font-family: Arial, Helvetica, Sans-Serif;
+	margin-top: 1%;
+	position: relative;
+	z-index: 999;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+.nav li a {
+	background-color: #FF6900;
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 15px;
+	display: to block;
+}
+
+.nav li label {
+	background-color: #FF6900;
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 15px;
+	display: block;
+	filter:Alpha(Opacity=30);
+     -moz-border-radius: 8px;
+     -khtml-border-radius: 8px;
+     -webkit-border-radius: 8px;
+     border-radius: 8px;
+}
+
+.nav li a:hover {
+	background-color: #FF6900;
+}
+
+.nav li ul {
+	display: none;
+	position: absolute;
+	/* min-height: 140px; */
+}
+
+.nav li:hover>ul {
+	display: block;
+}
+
+.nav li ul li {
+	position: relative;
+}
+
+.nav li ul li ul {
+	/* right: -140px; */
+	top: 0px;
+}
+
+.nav>li {
+	/* float: left; */
+	
+}
+
+.companyHeaderGrid.ui-panelgrid>*>tr, .companyHeaderGrid.ui-panelgrid .ui-panelgrid-cell
+	{
+	border: none;
+}
+
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 0.em;
+}

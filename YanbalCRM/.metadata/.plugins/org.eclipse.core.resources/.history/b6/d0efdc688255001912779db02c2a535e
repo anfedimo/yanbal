@@ -1,0 +1,217 @@
+package co.sistemcobro.yanbal.dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
+
+import co.sistemcobro.yanbal.bean.gestionCantidad;
+
+public class DashBoardDAO extends BaseDAO {
+
+	public DashBoardDAO(DataSource ds) {
+		super(ds);
+	}
+
+	private static Logger logger = Logger.getLogger(DashBoardDAO.class);
+
+	private String SQL_BUSCAR_GESTION_DIA = "select t.nombretipificacion,count(1)"
+			+ " from publicar.publicar.gestion g "
+			+ " inner join publicar.publicar.tipificacion t on t.idtipificacion=g.idtipificacion "
+			+ " where g.idusuariocrea=? and CONVERT(date,g.fechacrea)=CONVERT(date, getdate()) "
+			+ " group by t.nombretipificacion";
+
+	private String SQL_BUSCAR_GESTION_TOTAL = "select t.nombretipificacion,count(1)"
+			+ " from publicar.publicar.gestion g "
+			+ " inner join publicar.publicar.tipificacion t on t.idtipificacion=g.idtipificacion "
+			+ " where g.idusuariocrea=? " + " group by t.nombretipificacion";
+
+	private String SQL_BUSCAR_GESTION_DIA_ANTERIOR = "select t.nombretipificacion,count(1)"
+			+ " from publicar.publicar.gestion g "
+			+ " inner join publicar.publicar.tipificacion t on t.idtipificacion=g.idtipificacion "
+			+ " where g.idusuariocrea=? and CONVERT(date,g.fechacrea)=DATEADD (DAY , -1 ,CONVERT(date, getdate()))"
+
+			+ " group by t.nombretipificacion";
+
+	private String SQL_BUSCAR_HISTORICO_COMPROMISOS = "select count(1) ,cast(CONVERT(date,g.fechacrea) as varchar(10))"
+			+ "from publicar.publicar.gestion g "
+			+ "inner join publicar.publicar.tipificacion t on t.idtipificacion=g.idtipificacion "
+			+ "where g.idusuariocrea=? and g.idtipificacion in (9,10) "
+			+ " and g.fechacrea between DATEADD (DAY , -6 ,CONVERT(date, getdate())) and CONVERT(date, getdate()) "
+			+ "group by CONVERT(date,g.fechacrea) order by CONVERT(date,g.fechacrea)";
+
+	private String SQL_MEJOR_COMPROMISO = "select count(1) as cant,cast(CONVERT(date,g.fechacrea) as varchar(10))as fecha,g.idusuariocrea "
+			+ "from publicar.publicar.gestion g "
+			+ "inner join publicar.publicar.tipificacion t on t.idtipificacion=g.idtipificacion "
+			+ "where g.idtipificacion in (9,10) "
+			+ "and g.fechacrea between DATEADD (DAY , -6 ,CONVERT(date, getdate())) and CONVERT(date, getdate()) "
+			+ "group by CONVERT(date,g.fechacrea),g.idusuariocrea " + "order by CONVERT(date,g.fechacrea) asc";
+
+	public List<gestionCantidad> buscarGestionesDia(String idusuario) throws Exception {
+
+		ArrayList<gestionCantidad> gestiones = new ArrayList<>();
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(SQL_BUSCAR_GESTION_DIA);
+			ps.setString(1, idusuario);
+
+			rs = ps.executeQuery();
+			int t = 1;
+			while (rs.next()) {
+				t = 1;
+				gestionCantidad cl = new gestionCantidad();
+
+				cl.setNombre(rs.getString(t++));
+				cl.setCantidad(rs.getInt(t++));
+
+				gestiones.add(cl);
+			}
+		} catch (SQLException e) {
+			logger.error("Error SQL al tratar de leer  las gestiones del dia ", e);
+			throw new SQLException("Error SQL al tratar de leer  las gestiones del dia ", e);
+		} catch (Exception e) {
+			logger.error("Error al tratar de leer  las gestiones del dia ", e);
+			throw new Exception("Error al tratar de leer  las gestiones del dia : ", e);
+		} finally {
+			closeConexion();
+
+		}
+		return gestiones;
+	}
+
+	public List<gestionCantidad> buscarGestionesTotales(String idusuario) throws Exception {
+
+		ArrayList<gestionCantidad> gestiones = new ArrayList<>();
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(SQL_BUSCAR_GESTION_TOTAL);
+			ps.setString(1, idusuario);
+
+			rs = ps.executeQuery();
+			int t = 1;
+			while (rs.next()) {
+				t = 1;
+				gestionCantidad cl = new gestionCantidad();
+
+				cl.setNombre(rs.getString(t++));
+				cl.setCantidad(rs.getInt(t++));
+
+				gestiones.add(cl);
+			}
+		} catch (SQLException e) {
+			logger.error("Error SQL al tratar de leer  las gestiones del dia ", e);
+			throw new SQLException("Error SQL al tratar de leer  las gestiones del dia ", e);
+		} catch (Exception e) {
+			logger.error("Error al tratar de leer  las gestiones del dia ", e);
+			throw new Exception("Error al tratar de leer  las gestiones del dia : ", e);
+		} finally {
+			closeConexion();
+
+		}
+		return gestiones;
+	}
+
+	public List<gestionCantidad> buscarGestionesDiaAnterior(String idusuario) throws Exception {
+
+		ArrayList<gestionCantidad> gestiones = new ArrayList<>();
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(SQL_BUSCAR_GESTION_DIA_ANTERIOR);
+			ps.setString(1, idusuario);
+
+			rs = ps.executeQuery();
+			int t = 1;
+			while (rs.next()) {
+				t = 1;
+				gestionCantidad cl = new gestionCantidad();
+
+				cl.setNombre(rs.getString(t++));
+				cl.setCantidad(rs.getInt(t++));
+
+				gestiones.add(cl);
+			}
+		} catch (SQLException e) {
+			logger.error("Error SQL al tratar de leer  las gestiones del dia ", e);
+			throw new SQLException("Error SQL al tratar de leer  las gestiones del dia ", e);
+		} catch (Exception e) {
+			logger.error("Error al tratar de leer  las gestiones del dia ", e);
+			throw new Exception("Error al tratar de leer  las gestiones del dia : ", e);
+		} finally {
+			closeConexion();
+
+		}
+		return gestiones;
+	}
+
+	public List<gestionCantidad> historicoCompromisos(String idusuario) throws Exception {
+
+		ArrayList<gestionCantidad> gestiones = new ArrayList<>();
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(SQL_BUSCAR_HISTORICO_COMPROMISOS);
+			ps.setString(1, idusuario);
+
+			rs = ps.executeQuery();
+			int t = 1;
+			while (rs.next()) {
+				t = 1;
+				gestionCantidad cl = new gestionCantidad();
+
+				cl.setCantidad(rs.getInt(t++));
+				cl.setNombre(rs.getString(t++));
+
+				gestiones.add(cl);
+			}
+		} catch (SQLException e) {
+			logger.error("Error SQL al tratar de leer  las gestiones del dia ", e);
+			throw new SQLException("Error SQL al tratar de leer  las gestiones del dia ", e);
+		} catch (Exception e) {
+			logger.error("Error al tratar de leer  las gestiones del dia ", e);
+			throw new Exception("Error al tratar de leer  las gestiones del dia : ", e);
+		} finally {
+			closeConexion();
+
+		}
+		return gestiones;
+	}
+
+	public List<gestionCantidad> mejorCompromiso() throws Exception {
+
+		ArrayList<gestionCantidad> gestiones = new ArrayList<>();
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(SQL_MEJOR_COMPROMISO);
+
+			rs = ps.executeQuery();
+			int t = 1;
+			while (rs.next()) {
+				t = 1;
+				gestionCantidad cl = new gestionCantidad();
+
+				cl.setCantidad(rs.getInt(t++));
+				cl.setNombre(rs.getString(t++));
+
+				gestiones.add(cl);
+			}
+		} catch (SQLException e) {
+			logger.error("Error SQL al tratar de leer  las gestiones del dia ", e);
+			throw new SQLException("Error SQL al tratar de leer  las gestiones del dia ", e);
+		} catch (Exception e) {
+			logger.error("Error al tratar de leer  las gestiones del dia ", e);
+			throw new Exception("Error al tratar de leer  las gestiones del dia : ", e);
+		} finally {
+			closeConexion();
+
+		}
+		return gestiones;
+	}
+
+}

@@ -1,0 +1,225 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="../../resources/templates/templateGestion.xhtml">
+
+
+	<ui:define name="top">
+		<div
+			style="position: relative; top: -14px; left: 582px; margin-top: -2%; width: 10%;">
+			<center>
+				<p:commandButton value="Colgar"  style="font-weight:bold"  onclick="fun_include_haup('haup');"></p:commandButton>
+				<p:commandButton value="Mute"  style="font-weight:bold"  onclick="fun_include_mute('mute');"></p:commandButton>
+				<p:commandButton value="Espera"  style="font-weight:bold"  onclick="fun_include_hold('hold');"></p:commandButton>
+			</center>
+		</div>
+	</ui:define>
+
+
+	<ui:define name="left">
+		<p:dialog dynamic="true" modal="true" resizable="false"
+			header="Advertencia" hideEffect="fade" showEffect="fade"
+			widgetVar="dlg1" minHeight="40" styleClass="dialog"
+			position="center center" onShow="PF('dlg1').initPosition()"
+			responsive="true">
+			<h:outputText value="#{clienteBean.mesajeError}" />
+		</p:dialog>
+
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form id="obligaciones">
+			<p:messages id="messages" showDetail="true" closable="true">
+
+			</p:messages>
+
+			<p:dataTable var="obligacion"
+				value="#{clienteBean.cliente.obligaciones}"
+				emptyMessage="Las Obligaciones de este deudor no cumplen las condiciones para ser gestionadas"
+				scrollable="true" scrollWidth="100%">
+
+				<p:column headerText="Factura"  width="40">
+					<h:outputText value="#{obligacion.factura}" />
+				</p:column>
+				<p:column headerText="Nombre Cargue" width="120">
+					<h:outputText value="#{obligacion.mombreCargue}" />
+				</p:column>
+				<p:column headerText="Primer Pedido"  width="27">
+					<h:outputText value="#{obligacion.indPrimerPedido}" />
+				</p:column>
+				<p:column headerText="Fecha Vencimiento"  width="50">
+					<h:outputText value="#{obligacion.fechaVencimiento}" />
+				</p:column>
+				<p:column headerText="Dias Mora Inicial"  width="30">
+					<h:outputText value="#{obligacion.diaMoraInicial}" />
+				</p:column>
+				<p:column headerText="Edad Mora Inicial"  width="40">
+					<h:outputText value="#{obligacion.edadMoraInicial}" />
+				</p:column>
+				<p:column headerText="Valor Inicial" width="50">
+					<h:outputText value="#{obligacion.valorInicial}" >
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Saldo Capital Inicial" width="50">
+					<h:outputText value="#{obligacion.saldoCapitalInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Saldo Intereses Inicial" width="50">
+					<h:outputText value="#{obligacion.saldoInteresInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Saldo Gasto Administración Inicial" width="50">
+					<h:outputText value="#{obligacion.salgoGastoAdminInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Valor Total Inicial" width="50">
+					<h:outputText value="#{obligacion.valorTotalInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<!-- Valores Actuales -->
+				<p:column headerText="Dias Mora Al Dia" width="80">
+					<h:outputText value="#{obligacion.diaMoraActual}" />
+				</p:column>
+				<p:column headerText="Edad Mora Al Dia" width="80">
+					<h:outputText value="#{obligacion.edadMoraActual}" />
+				</p:column>
+				<!-- Valores a cobrar Inicio -->
+				<p:column headerText="Saldo Capital Al Dia"  width="80">
+					<p:selectBooleanButton value="#{obligacion.saldoCapitalActualB}"
+						onLabel="#{obligacion.saldoCapitalActualS}"
+						offLabel="#{obligacion.saldoCapitalActualS}" style="width:80px">
+						<p:ajax update="obligaciones:totalCobro"
+							listener="#{clienteBean.cambioValor1(obligacion)}" />
+					</p:selectBooleanButton>
+				</p:column>
+				<p:column headerText="Saldo Intereses Al Dia"  width="80">
+					<p:selectBooleanButton value="#{obligacion.saldoInteresesActualB}"
+						onLabel="#{obligacion.saldoInteresesActualS}"
+						offLabel="#{obligacion.saldoInteresesActualS}" style="width:80px">
+						<p:ajax update="obligaciones:totalCobro"
+							listener="#{clienteBean.cambioValor2(obligacion)}" />
+					</p:selectBooleanButton>
+				</p:column>
+				<p:column headerText="Saldo Gasto Administración Al Dia"  width="80">
+					<p:selectBooleanButton value="#{obligacion.saldoGastoAdminActualB}"
+						onLabel="#{obligacion.saldoGastoAdminActualS}"
+						offLabel="#{obligacion.saldoGastoAdminActualS}" style="width:80px">
+						<p:ajax update="obligaciones:totalCobro"
+							listener="#{clienteBean.cambioValor3(obligacion)}" />
+					</p:selectBooleanButton>
+				</p:column>
+				<p:column headerText="Valor Total Al Dia"  width="80">
+					<p:selectBooleanButton value="#{obligacion.valorTotalActualB}"
+						onLabel="#{obligacion.valorTotalActualS}"
+						offLabel="#{obligacion.valorTotalActualS}" style="width:80px">
+						<p:ajax update="obligaciones:totalCobro"
+							listener="#{clienteBean.cambioValor4(obligacion)}" />
+					</p:selectBooleanButton>
+				</p:column>
+				<!-- Valores a cobrar Fin -->
+	<br></br>
+			</p:dataTable>
+
+
+	<br></br>
+
+			<p:panel style="border:none;float:right" id="totalCobro" >
+				<p:outputLabel  value="Total: "  style=" font-size: 1.5em;"></p:outputLabel>
+				<p:outputLabel value="#{clienteBean.valorCobro}"
+					style="    font-size: 1.5em;     color: limegreen; ">
+					<f:convertNumber pattern="$ #,##0.00" currencySymbol="$" />
+				</p:outputLabel>
+			</p:panel>
+
+		</h:form>
+		
+		<br></br>
+		<br></br>
+
+
+
+
+		<center>
+			<ui:include src="/pages/tipificacion/menu_tipificacion.xhtml"></ui:include>
+		</center>
+
+		<p:panel id="pnlTipificacion" style="border:none">
+			<c:if test="#{navegacionBean.tipificacion==1}">
+				<ui:include src="/pages/tipificacion/noefectivo.xhtml"></ui:include>
+			</c:if>
+			<c:if test="#{navegacionBean.tipificacion==2}">
+				<ui:include src="/pages/tipificacion/promesa.xhtml"></ui:include>
+			</c:if>
+			<c:if test="#{navegacionBean.tipificacion==3}">
+				<ui:include src="/pages/tipificacion/yapago.xhtml"></ui:include>
+			</c:if>
+			<c:if test="#{navegacionBean.tipificacion==4}">
+				<ui:include src="/pages/tipificacion/reclamo.xhtml"></ui:include>
+			</c:if>
+			<c:if test="#{navegacionBean.tipificacion==5}">
+				<ui:include src="/pages/tipificacion/otro.xhtml"></ui:include>
+			</c:if>
+			<c:if test="#{navegacionBean.tipificacion==6}">
+				<ui:include src="/pages/tipificacion/tercero.xhtml"></ui:include>
+			</c:if>
+			<c:if test="#{navegacionBean.tipificacion==7}">
+				<ui:include src="/pages/tipificacion/acuerdocomite.xhtml"></ui:include>
+			</c:if>
+			<c:if test="#{navegacionBean.tipificacion==8}">
+				<ui:include src="/pages/tipificacion/comite.xhtml"></ui:include>
+			</c:if>
+		</p:panel>
+
+
+
+
+
+
+		<style type="text/css">
+.ui-stack {
+	z-index: 1000;
+}
+</style>
+
+
+		<h:form id="frmMenu">
+                  <p:stack icon="/resources/demo/caja.png" expanded="true">
+
+
+                        <p:menuitem value="Cliente" icon="/resources/demo/cliente.png"
+                              actionListener="#{datosAdicionalesBean.datosAdicionales}"
+                              onclick="PF('statusDialog').show();"
+                              oncomplete="PF('statusDialog').hide();PF('dlgDatosAdicionales').show();" />
+
+
+                        <p:menuitem value="Teléfono" icon="/resources/demo/telefonos.png"
+                              actionListener="#{datosAdicionalesBean.telefonos}"
+                              onclick="PF('statusDialog').show();"
+                              oncomplete="PF('statusDialog').hide();PF('dlgTelefono').show();" />
+
+
+                        <p:menuitem value="Memo" icon="/resources/demo/memo.png"
+                              actionListener="#{clienteBean.memo}"
+                              onclick="PF('statusDialog').show();"
+                              oncomplete="PF('statusDialog').hide();PF('dlg2').show();" />
+                  </p:stack>
+            </h:form>
+
+
+
+
+	</ui:define>
+</ui:composition>
+
+
+

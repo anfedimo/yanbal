@@ -1,0 +1,3 @@
+#GlassFish 3
+#Tue Apr 02 15:26:22 COT 2019
+org.eclipse.jst.jee.server\:YanbalEAR=D\:\\glassfish-4.0\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\YanbalEAR

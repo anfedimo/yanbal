@@ -1,0 +1,104 @@
+
+zsquid:CommentedOutCodeLineÕ"<This block of commented-out lines of code should be removed.(¡Õ±šHŽRMAJORZ
+CODE_SMELL
+Xsquid:S00108X")Either remove or fill this block of code.(å¥ž‡H†ŽRMAJORZ
+CODE_SMELL
+]squid:S19486"'Make "login" transient or serializable.(šÉì¶üÿÿÿÿH ŽRCRITICALZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(¢§–þHøRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineØ"<This block of commented-out lines of code should be removed.(ùœå¥úÿÿÿÿH‚ŽRMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(Ú©°H™ŽRMINORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine°"<This block of commented-out lines of code should be removed.(¡Õ±šHúRMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÐ"<This block of commented-out lines of code should be removed.(¡Õ±šHÿRMAJORZ
+CODE_SMELL
+lsquid:UselessImportCheck"1Remove this unused import 'java.math.BigDecimal'.(êêŠHœŽRMINORZ
+CODE_SMELL
+Ysquid:S00108€")Either remove or fill this block of code.(Úîø›H‘ŽRMAJORZ
+CODE_SMELL
+bsquid:S1948:",Make "descuentos" transient or serializable.(× ¿ŠûÿÿÿÿH¡ŽRCRITICALZ
+CODE_SMELL
+squid:CommentedOutCodeLineÆ"<This block of commented-out lines of code should be removed.(åÉ¿üÿÿÿÿHûRMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLiner"<This block of commented-out lines of code should be removed.(Ò‚ ãHòRMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(µœ„H˜ŽRMINORZ
+CODE_SMELL
+Xsquid:S00108_")Either remove or fill this block of code.(å¥ž‡H‡ŽRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine‘"<This block of commented-out lines of code should be removed.(è¤úÔÿÿÿÿÿHôRMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLine›"<This block of commented-out lines of code should be removed.(åñß&HöRMAJORZ
+CODE_SMELL
+Ysquid:S00108Œ")Either remove or fill this block of code.(å¥ž‡HŒŽRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÓ"<This block of commented-out lines of code should be removed.(ØÅ§üÿÿÿÿH€ŽRMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineË"<This block of commented-out lines of code should be removed.(¡Õ±šHýRMAJORZ
+CODE_SMELL
+Ysquid:S00108¶")Either remove or fill this block of code.(å¥ž‡HŽŽRMAJORZ
+CODE_SMELL
+dsquid:S19482"3Make "obligacionGestion" transient or serializable.(®ª¤æHŸŽRCRITICALZ
+CODE_SMELL
+squid:CommentedOutCodeLine®"<This block of commented-out lines of code should be removed.(Ü«òÜüÿÿÿÿHùRMAJORZ
+CODE_SMELL
+Ysquid:S00108Â")Either remove or fill this block of code.(å¥ž‡HŽRMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿHóRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine•"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿHõRMAJORZ
+CODE_SMELL
+£squid:S4165¾"oRemove this useless assignment; "obligacionGestion" already holds the assigned value along all execution paths.(¿ó§éüÿÿÿÿHñRMAJORZ
+CODE_SMELL
+Ysquid:S00108¼")Either remove or fill this block of code.(å¥ž‡HŽRMAJORZ
+CODE_SMELL
+Xsquid:S00108f")Either remove or fill this block of code.(å¥ž‡HˆŽRMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(²ÊÖ¡H—ŽRMINORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(í¶¨”H”ŽRMINORZ
+CODE_SMELL
+nsquid:UselessImportCheck"3Remove this unused import 'java.math.RoundingMode'.(¿ì†‹HŽRMINORZ
+CODE_SMELL
+_squid:S19481")Make "gestion" transient or serializable.(ðºÙòøÿÿÿÿHžŽRCRITICALZ
+CODE_SMELL
+Ysquid:S00108ª")Either remove or fill this block of code.(å¥ž‡HŽRMAJORZ
+CODE_SMELL
+”squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(ã•¾˜üÿÿÿÿH–ŽRMINORZ
+CODE_SMELL
+fsquid:UselessImportCheck"+Remove this unused import 'java.util.Date'.(¸…¼üH›ŽRMINORZ
+CODE_SMELL
+\squid:S1656¾"/Remove or correct this useless self-assignment.(¿ó§éüÿÿÿÿHðRMAJORZBUG
+Xsquid:S00108Q")Either remove or fill this block of code.(å¥ž‡H…ŽRMAJORZ
+CODE_SMELL
+Xsquid:S00108E")Either remove or fill this block of code.(”ý¾H„ŽRMAJORZ
+CODE_SMELL
+ysquid:S1854¾"ERemove this useless assignment to local variable "obligacionGestion".(¿ó§éüÿÿÿÿH“ŽRMAJORZ
+CODE_SMELL
+Xsquid:S00108m")Either remove or fill this block of code.(å¥ž‡H‰ŽRMAJORZ
+CODE_SMELL
+Xsquid:S00108~")Either remove or fill this block of code.(å¥ž‡HŠŽRMAJORZ
+CODE_SMELL
+”squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(Öú¿üýÿÿÿÿHšŽRMINORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÎ"<This block of commented-out lines of code should be removed.(‰öš¡HþRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÉ"<This block of commented-out lines of code should be removed.(±Á·µøÿÿÿÿHüRMAJORZ
+CODE_SMELL
+Ysquid:S00108…")Either remove or fill this block of code.(å¥ž‡H‹ŽRMAJORZ
+CODE_SMELL
+ƒsquid:S3776K"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(È¾òHƒŽRCRITICALZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(¼…ÆÛH•ŽRMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLineŸ"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿH÷RMAJORZ
+CODE_SMELL
+usquid:S00112K"FDefine and throw a dedicated exception instead of using a generic one.(È¾òH’ŽRMAJORZ
+CODE_SMELL
+†squid:CommentedOutCodeLineæ"<This block of commented-out lines of code should be removed.(í›«ïøÿÿÿÿ8ë˜ìø-H©ŽRMAJORZ
+CODE_SMELL
+†squid:CommentedOutCodeLineõ"<This block of commented-out lines of code should be removed.(’ûŸ¿ùÿÿÿÿ8ë˜ìø-HªŽRMAJORZ
+CODE_SMELL

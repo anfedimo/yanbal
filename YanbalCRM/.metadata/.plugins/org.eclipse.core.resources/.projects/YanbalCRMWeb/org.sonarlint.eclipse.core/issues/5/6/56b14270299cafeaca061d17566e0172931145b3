@@ -1,0 +1,66 @@
+
+squid:CommentedOutCodeLine×"<This block of commented-out lines of code should be removed.(þº·‹ýÿÿÿÿH›RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine£"<This block of commented-out lines of code should be removed.(ú¬”åH„›RMAJORZ
+CODE_SMELL
+\squid:S1481Ç"-Remove this unused "fechaTmp" local variable.(±Þ†ÆH‰›RMINORZ
+CODE_SMELL
+asquid:S1481Å"-Remove this unused "cantidad" local variable.(’§ÕÿÿÿÿÿHˆ›RMINORZ
+CODE_SMELL
+Wsquid:S2200•"/Only the sign of the result should be examined.(™í…‡H›RMINORZBUG
+§squid:S2159€"zRemove this call to "equals"; comparisons against null always return false; consider using '== null' to check for nullity.(á‰¢ÑþÿÿÿÿHûšRMAJORZBUG
+ysquid:CommentedOutCodeLine["<This block of commented-out lines of code should be removed.(“Ôõ¤HýšRMAJORZ
+CODE_SMELL
+ksquid:S1854Ç"<Remove this useless assignment to local variable "fechaTmp".(±Þ†ÆH‘›RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÂ"<This block of commented-out lines of code should be removed.(“Ö¹¨HþšRMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine§"<This block of commented-out lines of code should be removed.(õ’Ç–H…›RMAJORZ
+CODE_SMELL
+ˆsquid:S3776o"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(©ÚÍÏüÿÿÿÿHŠ›RCRITICALZ
+CODE_SMELL
+psquid:S1854Å"<Remove this useless assignment to local variable "cantidad".(’§ÕÿÿÿÿÿH“›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(ô‡çàH˜›RMINORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineË"<This block of commented-out lines of code should be removed.(šûù¯HÿšRMAJORZ
+CODE_SMELL
+psquid:S1854Ö"<Remove this useless assignment to local variable "fechaTmp".(‘ÞÕ¯ÿÿÿÿÿH•›RMAJORZ
+CODE_SMELL
+hsquid:S1191"5Use classes from the Java API instead of Sun classes.(¶ÀÚêûÿÿÿÿH÷šRMAJORZ
+CODE_SMELL
+qsquid:S2583€"DChange this condition so that it does not always evaluate to "false"(á‰¢ÑþÿÿÿÿH‡›RMAJORZBUG
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(²ÊÖ¡Hš›RMINORZ
+CODE_SMELL
+Wsquid:S2200‡"/Only the sign of the result should be examined.(ž¦«ªH‹›RMINORZBUG
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(”¬ééH—›RMINORZ
+CODE_SMELL
+•squid:S1192t"_Define a constant instead of duplicating this literal "PF('dlAcuerdoComite').show();" 16 times.(òã”€ùÿÿÿÿHùšRCRITICALZ
+CODE_SMELL
+msquid:S1854Æ"9Remove this useless assignment to local variable "cuota".(ð±ãàøÿÿÿÿH’›RMAJORZ
+CODE_SMELL
+“squid:S1192k"bDefine a constant instead of duplicating this literal "frmAcuerdoComite:pnlAcuerdoComite" 3 times.(Ðêª†HøšRCRITICALZ
+CODE_SMELL
+psquid:S1854Ý"<Remove this useless assignment to local variable "fechaTmp".(‘ÞÕ¯ÿÿÿÿÿH–›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(ÎßëÒH™›RMINORZ
+CODE_SMELL
+Zsquid:S1148·"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHœ›RMINORZVULNERABILITY
+squid:CommentedOutCodeLineë"<This block of commented-out lines of code should be removed.(±ŽóÁøÿÿÿÿHƒ›RMAJORZ
+CODE_SMELL
+psquid:S1854Ð"<Remove this useless assignment to local variable "fechaTmp".(‘ÞÕ¯ÿÿÿÿÿH”›RMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(Ð²æH››RMINORZ
+CODE_SMELL
+\squid:S2200û"/Only the sign of the result should be examined.(÷ë¬ÚüÿÿÿÿHŽ›RMINORZBUG
+zsquid:CommentedOutCodeLine®"<This block of commented-out lines of code should be removed.(è½ááH†›RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(š‡ŒéHüšRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÞ"<This block of commented-out lines of code should be removed.(þº·‹ýÿÿÿÿH‚›RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÑ"<This block of commented-out lines of code should be removed.(þº·‹ýÿÿÿÿH€›RMAJORZ
+CODE_SMELL
+squid:S1192s"_Define a constant instead of duplicating this literal "frmAcuerdoComite:pnlDlMensaje" 16 times.(ÏÍðÃHúšRCRITICALZ
+CODE_SMELL
+\squid:S2200Ž"/Only the sign of the result should be examined.(±·Á¶ûÿÿÿÿHŒ›RMINORZBUG

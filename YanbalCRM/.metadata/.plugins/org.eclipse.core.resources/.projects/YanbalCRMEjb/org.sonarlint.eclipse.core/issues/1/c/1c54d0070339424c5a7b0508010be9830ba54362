@@ -1,0 +1,21 @@
+
+„squid:UselessImportCheck"DRemove this unused import 'co.sistemcobro.yanbal.bean.ComiteEstado'.(’ßßáÿÿÿÿÿHõœRMINORZ
+CODE_SMELL
+xsquid:UselessImportCheck"=Remove this unused import 'co.sistemcobro.yanbal.bean.Cuota'.(ô‡çàHöœRMINORZ
+CODE_SMELL
+zsquid:UselessImportCheck"?Remove this unused import 'co.sistemcobro.yanbal.dao.CuotaDAO'.(¾ŸıH÷œRMINORZ
+CODE_SMELL
+ksquid:S1135+"2Complete the task associated to this TODO comment.(àøö×ûÿÿÿÿ8‚Âßø-HøœRINFOZ
+CODE_SMELL
+}squid:UselessImportCheck"BRemove this unused import 'co.sistemcobro.yanbal.bean.Obligacion'.(Ğ²æHùœRMINORZ
+CODE_SMELL
+„squid:UselessImportCheck"IRemove this unused import 'co.sistemcobro.yanbal.bean.ObligacionGestion'.(Ú©°HúœRMINORZ
+CODE_SMELL
+…squid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(şŒøşùÿÿÿÿ8ÌĞàø-HûœRMAJORZ
+CODE_SMELL
+€squid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(„§ñ£8ÌĞàø-HüœRMAJORZ
+CODE_SMELL
+‰squid:UselessImportCheck"HRemove this unused import 'co.sistemcobro.yanbal.dao.FacturaGestionDAO'.(şŠ—8µÑŞø-HıœRMINORZ
+CODE_SMELL
+…squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(şŒøşùÿÿÿÿ8‚Âßø-HşœRMAJORZ
+CODE_SMELL

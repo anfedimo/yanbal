@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+
+	<h:form id="frmMemo">
+		<p:panel id="pnlMemo">
+			<c:choose>
+				<c:when test="#{fn:length(clienteBean.gestiones) > 0}">
+					<p:dataScroller value="#{clienteBean.gestiones}" var="gestion">
+
+						<h:panelGrid columns="2" style="width:100%">
+							<p:outputPanel style="border-bottom: 1px solid grey">
+								<h:panelGrid>
+									<h:panelGrid columns="2" cellpadding="6">
+
+										<h:outputText value="Idgestion: " />
+										<h:outputText value="#{gestion.idGestion}"
+											style="font-weight: bold" />
+
+										<h:outputText
+											rendered="#{gestion.nombreTipificacion != null}"
+											value="Nombre Tipificación: " />
+										<h:outputText
+											rendered="#{gestion.nombreTipificacion != null}"
+											value="#{gestion.nombreTipificacion}"
+											style="font-weight: bold" />
+
+										<h:outputText rendered="#{gestion.identificacion != null}"
+											value="Identificación: " />
+										<h:outputText rendered="#{gestion.identificacion != null}"
+											value="#{gestion.identificacion}" style="font-weight: bold" />
+
+										<h:outputText rendered="#{gestion.nombreCliente != null}"
+											value="Nombre CLiente: " />
+										<h:outputText rendered="#{gestion.nombreCliente != null}"
+											value="#{gestion.nombreCliente}  #{gestion.apellidoCliente}" style="font-weight: bold" />
+
+										<h:outputText rendered="#{gestion.fechaPromesa != null}"
+											value="Fecha Promesa:" />
+										<h:outputText rendered="#{gestion.fechaPromesa != null}"
+											value="#{gestion.fechaPromesa}" style="font-weight: bold" />
+
+										<h:outputText rendered="#{gestion.nombreCargue != null}"
+											value="Nombre Cargue:" />
+										<h:outputText rendered="#{gestion.nombreCargue != null}"
+											value="#{gestion.nombreCargue}" style="font-weight: bold" />
+
+										<h:outputText rendered="#{gestion.factura != null}"
+											value="Factura:" />
+										<h:outputText rendered="#{gestion.factura != null}"
+											value="#{gestion.factura}"
+											style="font-weight: bold" />
+
+										<h:outputText rendered="#{gestion.nombreAsesor  != null}"
+											value="Asesor:" />
+										<h:outputText rendered="#{gestion.nombreAsesor  != null}"
+											value="#{gestion.nombreAsesor}" style="font-weight: bold" />
+
+										
+
+										<h:outputText rendered="#{gestion.valorPromesa != 0}"
+											value="Valor Promesa:" />
+											
+										<h:outputText rendered="#{gestion.valorPromesa  != 0}"
+											value="#{gestion.valorPromesa}" style="font-weight: bold">
+											<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+										</h:outputText>
+
+										
+										<h:outputText rendered="#{gestion.observacion != null}"
+											value="Observacion:" />
+										<h:outputText rendered="#{gestion.observacion != null}"
+											value="#{gestion.observacion}" style="font-weight: bold" />
+											
+											<h:outputText rendered="#{gestion.fechaUltimoContacto  != null}"
+											value="Fecha Último Contacto:" />
+										<h:outputText rendered="#{gestion.fechaUltimoContacto!= null}"
+											value="#{gestion.fechaUltimoContacto}" style="font-weight: bold" />
+
+									</h:panelGrid>
+
+								</h:panelGrid>
+							</p:outputPanel>
+						</h:panelGrid>
+					</p:dataScroller>
+
+				</c:when>
+				<c:otherwise>
+					<p>No hay Gestiones para este Deudor</p>
+				</c:otherwise>
+			</c:choose>
+		</p:panel>
+	</h:form>
+
+
+
+
+
+</ui:composition>

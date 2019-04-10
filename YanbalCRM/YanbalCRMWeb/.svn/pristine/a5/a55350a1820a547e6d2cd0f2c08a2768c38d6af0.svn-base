@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+
+	<h:form id="frmPago">
+		<p:panel id="pnlPago">
+			<c:choose>
+				<c:when test="#{fn:length(clienteBean.pagos) > 0}">
+					<p:dataScroller value="#{clienteBean.pagos}" var="pago">
+
+						<h:panelGrid columns="2" style="width:100%">
+							<p:outputPanel style="border-bottom: 1px solid grey">
+								<h:panelGrid>
+									<h:panelGrid columns="2" cellpadding="6">
+										
+										<h:outputText rendered="#{pago.numCta != null}"
+											value="Número Cuenta : " />
+										<h:outputText rendered="#{pago.numCta != null}"
+											value="#{pago.numCta}" style="font-weight: bold" />
+											
+										<h:outputText rendered="#{pago.descripcionUser != null}"
+											value="Descripción Usuario : " />
+										<h:outputText rendered="#{pago.descripcionUser != null}"
+											value="#{pago.descripcionUser}" style="font-weight: bold" />
+											
+										<h:outputText rendered="#{pago.descripcionPago != null}"
+											value="Descripción Pago : " />
+										<h:outputText rendered="#{pago.descripcionPago != null}"
+											value="#{pago.descripcionPago}" style="font-weight: bold" />
+											
+										<h:outputText rendered="#{pago.fechaVencimiento != null}"
+											value="Fecha Vencimiento : " />
+										<h:outputText rendered="#{pago.fechaVencimiento != null}"
+											value="#{pago.fechaVencimiento}" style="font-weight: bold" >
+											<f:convertDateTime type="date" pattern="yyyy-MM-dd"/>
+										</h:outputText>
+											
+										<h:outputText rendered="#{pago.importePagado != null}"
+											value="Importe Pagado : " />
+										<h:outputText rendered="#{pago.importePagado != null}"
+											value="#{pago.importePagado}" style="font-weight: bold" >
+											<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+										</h:outputText>
+											
+										<h:outputText rendered="#{pago.importeMora != null}"
+											value="Importe Mora : " />
+										<h:outputText rendered="#{pago.importeMora != null}"
+											value="#{pago.importeMora}" style="font-weight: bold" >
+											<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+										</h:outputText>
+										
+										<h:outputText rendered="#{pago.motoPagado != null}"
+											value="Moto Pagado : " />
+										<h:outputText rendered="#{pago.motoPagado != null}"
+											value="#{pago.motoPagado}" style="font-weight: bold" >
+											<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+										</h:outputText>
+											
+										<h:outputText rendered="#{pago.fechaPago != null}"
+											value="Fecha Pago : " />
+										<h:outputText rendered="#{pago.fechaPago != null}"
+											value="#{pago.fechaPago}" style="font-weight: bold" >
+											<f:convertDateTime type="date" pattern="yyyy-MM-dd"/>
+										</h:outputText>
+										
+										<h:outputText rendered="#{pago.numLiquidacion != null}"
+											value="Número Liquidación : " />
+										<h:outputText rendered="#{pago.numLiquidacion != null}"										
+											value="#{pago.numLiquidacion}" style="font-weight: bold" />
+											
+										<h:outputText rendered="#{pago.codigoIdc != null}"
+											value="Código IDC : " />
+										<h:outputText rendered="#{pago.codigoIdc != null}"
+											value="#{pago.codigoIdc}" style="font-weight: bold" />
+											
+											
+											
+									</h:panelGrid>
+								</h:panelGrid>
+							</p:outputPanel>
+						</h:panelGrid>
+					</p:dataScroller>
+
+				</c:when>
+				<c:otherwise>
+					<p>No hay pagos para este Deudor</p>
+				</c:otherwise>
+			</c:choose>
+		</p:panel>
+	</h:form>
+
+
+
+
+
+</ui:composition>

@@ -1,0 +1,16 @@
+
+Šsquid:S001160"VRename this field "Observacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·×”ËýÿÿÿÿHíšRMINORZ
+CODE_SMELL
+Ysquid:S1148q"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHïšRMINORZVULNERABILITY
+hsquid:S1191"5Use classes from the Java API instead of Sun classes.(¶ÀÚêûÿÿÿÿHæšRMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineA"<This block of commented-out lines of code should be removed.(Š±ýæHçšRMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(Ô’áàýÿÿÿÿHéšRMAJORZ
+CODE_SMELL
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(²ÊÖ¡HîšRMINORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(ú¬”åHèšRMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(õ’Ç–HêšRMAJORZ
+CODE_SMELL

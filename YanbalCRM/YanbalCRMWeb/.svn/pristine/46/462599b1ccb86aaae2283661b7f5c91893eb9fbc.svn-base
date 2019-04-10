@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<h:form id="frmSMS">
+
+		<p:dialog id="dlinfoSMS" closable="true" header="Error"
+			widgetVar="dlinfoSMS" styleClass="dialog">
+			<p:panel id="pnlDlMensaje">
+				<h:outputText value="#{smsBean.error}" />
+			</p:panel>
+		</p:dialog>
+
+		<p:panel id="pnlSMS">
+			<c:choose>
+				<c:when test="#{smsBean.inicio}">
+				<center>
+				<p:outputLabel value="Recuerde que debe seleccionar un n&uacute;mero celular." style="    color: red;"></p:outputLabel>
+				</center>
+					<p:panelGrid columns="2" styleClass="companyHeaderGrid">
+						<p:outputLabel value="Telefono: " style=" "></p:outputLabel>
+						<p:selectOneMenu id="slcTEL" value="#{smsBean.tel}">
+							<f:selectItem itemLabel="Seleccione..."></f:selectItem>
+							<f:selectItems value="#{smsBean.telefonos}" var="tel"
+								itemLabel="#{tel.telefono}" itemValue="#{tel.telefono}"></f:selectItems>
+						</p:selectOneMenu>
+
+					</p:panelGrid>
+					<center>
+						<p:dataTable id="smsDT" var="sms" value="#{smsBean.mensajes}"
+							selection="#{smsBean.sms}" rowKey="#{sms}">
+
+							<p:column selectionMode="single"
+								style="width:16px;text-align:center" />
+							<p:column headerText="SMS">
+								<h:outputText value="#{sms.texto}" />
+							</p:column>
+						</p:dataTable>
+						<p:commandButton value="Enviar" action="#{smsBean.enviar}"
+							process="@form" update="frmSMS:pnlSMS"
+							onclick="PF('statusDialog').show();"
+							oncomplete="PF('statusDialog').hide();"></p:commandButton>
+					</center>
+				</c:when>
+				<c:when test="#{smsBean.fin}">
+					<center>
+						<p:panelGrid columns="1" styleClass="companyHeaderGrid">
+							<p:outputLabel value="Mensaje Enviado"></p:outputLabel>
+							<p:commandButton value="Enviar Otro SMS"
+								action="#{smsBean.enviarOtro}" process="@form"
+								update="frmSMS:pnlSMS"></p:commandButton>
+						</p:panelGrid>
+					</center>
+				</c:when>
+			</c:choose>
+		</p:panel>
+	</h:form>
+
+</ui:composition>

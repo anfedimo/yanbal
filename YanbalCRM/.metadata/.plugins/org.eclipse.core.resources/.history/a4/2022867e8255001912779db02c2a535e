@@ -1,0 +1,22 @@
+package co.sistemcobro.yanbal.ejb;
+
+import java.util.List;
+
+import javax.ejb.Local;
+
+import co.sistemcobro.yanbal.bean.gestionCantidad;
+
+/**
+ * @author garaque
+ *
+ */
+@Local
+public interface IDashBoardEJBLocal {
+	public List<gestionCantidad> gestionDiaACtual(String filtro);
+	public List<gestionCantidad> gestionTotal(String filtro);
+	public List<gestionCantidad> gestionDiaAnterior(String filtro);
+	public List<gestionCantidad> historicoGestiones(String filtro);
+	public List<gestionCantidad> mejorCompromiso();
+
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<h:form id="frmDatosCliente">
+		<p:panelGrid columns="1" style="width:160px;    table-layout: fixed">
+
+			<p:outputLabel value="Identificación:"  style="font-weight:bold " />
+			<p:outputLabel value="${clienteBean.cliente.cedulaCliente}" />
+			<p:outputLabel value="Nombre:" style="font-weight:bold" />
+			<p:outputLabel value="${clienteBean.cliente.nombreCliente}" style="width:125px" />
+			<p:outputLabel value="Apellido:" style="font-weight:bold" />
+			<p:outputLabel value="${clienteBean.cliente.primerApellidoCliente}" style="width:125px" />
+			<p:outputLabel value="Ciudad:" style="font-weight:bold"/>
+			<p:outputLabel value="${clienteBean.cliente.ciudadDireccionCliente}" />
+			<p:outputLabel value="Departamento:" style="font-weight:bold"/>
+			<p:outputLabel value="${clienteBean.cliente.departamentoDireccionCliente}" />
+			<p:outputLabel value="Codigo de Directora:" style="font-weight:bold"/>
+			<p:outputLabel value="${clienteBean.cliente.directoraCodigo}" />
+			<p:outputLabel value="Nombre Coordinador:" style="font-weight:bold"/>
+			<p:outputLabel value="${clienteBean.cliente.nombreCoordinador}" />
+			<p:outputLabel value="Correo:" style="font-weight:bold"/>
+			<p:outputLabel value="${clienteBean.cliente.email}" />
+			<p:outputLabel value="Direcci&oacute;n del Despacho:" style="font-weight:bold"/>
+			<p:outputLabel value="${clienteBean.cliente.despachoDireccion}" />
+			
+	
+			<ui:insert name="left">Left</ui:insert>
+
+
+
+
+
+		</p:panelGrid>
+
+	</h:form>
+
+</ui:composition>

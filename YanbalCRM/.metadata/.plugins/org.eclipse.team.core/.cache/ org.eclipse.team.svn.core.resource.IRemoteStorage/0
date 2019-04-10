@@ -1,0 +1,218 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="../../resources/templates/templateGestion.xhtml">
+
+
+	<ui:define name="top">
+		<div
+			style="position: relative; top: -14px; left: 382px; margin-top: -2%; width: 13%;">
+			<center>
+				<p:commandButton value="Colgar" onclick="fun_include_haup('haup');"></p:commandButton>
+				<p:commandButton value="Mute" onclick="fun_include_mute('mute');"></p:commandButton>
+				<p:commandButton value="Espera" onclick="fun_include_hold('hold');"></p:commandButton>
+			</center>
+		</div>
+	</ui:define>
+
+
+	<ui:define name="left">
+		<p:dialog dynamic="true" modal="true" resizable="false"
+			header="Advertencia" hideEffect="fade" showEffect="fade"
+			widgetVar="dlg1" minHeight="40" styleClass="dialog"
+			position="center center" onShow="PF('dlg1').initPosition()"
+			responsive="true">
+			<h:outputText value="#{clienteBean.mesajeError}" />
+		</p:dialog>
+
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form id="obligaciones">
+			<p:messages id="messages" showDetail="true" closable="true">
+
+			</p:messages>
+
+			<p:dataTable var="obligacion"
+				value="#{clienteBean.cliente.obligaciones}"
+				emptyMessage="Las Obligaciones de este deudor no cumplen las condiciones para ser gestionadas"
+				scrollable="true" scrollWidth="100%">
+
+				<p:column headerText="Factura">
+					<h:outputText value="#{obligacion.factura}" />
+				</p:column>
+				<p:column headerText="Primer Pedido">
+					<h:outputText value="#{obligacion.indPrimerPedido}" />
+				</p:column>
+				<p:column headerText="Fecha Vencimiento">
+					<h:outputText value="#{obligacion.fechaVencimiento}" />
+				</p:column>
+				<p:column headerText="Dias Mora Inicial">
+					<h:outputText value="#{obligacion.diaMoraInicial}" />
+				</p:column>
+				<p:column headerText="Edad Mora Inicial">
+					<h:outputText value="#{obligacion.edadMoraInicial}" />
+				</p:column>
+				<p:column headerText="Valor Inicial">
+					<h:outputText value="#{obligacion.valorInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Saldo Capital Inicial">
+					<h:outputText value="#{obligacion.saldoCapitalInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Saldo Intereses Inicial">
+					<h:outputText value="#{obligacion.saldoInteresInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Saldo Gasto Administración Inicial">
+					<h:outputText value="#{obligacion.salgoGastoAdminInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Valor Total Inicial">
+					<h:outputText value="#{obligacion.valorTotalInicial}">
+						<f:convertNumber pattern="¤#,##0.00" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
+				<!-- Valores Actuales -->
+				<p:column headerText="Dias Mora Al Dia">
+					<h:outputText value="#{obligacion.diaMoraActual}" />
+				</p:column>
+				<p:column headerText="Edad Mora Al Dia">
+					<h:outputText value="#{obligacion.edadMoraActual}" />
+				</p:column>
+				<!-- Valores a cobrar Inicio -->
+				<p:column headerText="Saldo Capital Al Dia">
+					<p:selectBooleanButton value="#{obligacion.saldoCapitalActualB}"
+						onLabel="#{obligacion.saldoCapitalActualS}"
+						offLabel="#{obligacion.saldoCapitalActualS}" style="width:60px">
+						<p:ajax update="obligaciones:totalCobro"
+							listener="#{clienteBean.cambioValor1(obligacion)}" />
+					</p:selectBooleanButton>
+				</p:column>
+				<p:column headerText="Saldo Intereses Al Dia">
+					<p:selectBooleanButton value="#{obligacion.saldoInteresesActualB}"
+						onLabel="#{obligacion.saldoInteresesActualS}"
+						offLabel="#{obligacion.saldoInteresesActualS}" style="width:60px">
+						<p:ajax update="obligaciones:totalCobro"
+							listener="#{clienteBean.cambioValor2(obligacion)}" />
+					</p:selectBooleanButton>
+				</p:column>
+				<p:column headerText="Saldo Gasto Administración Al Dia">
+					<p:selectBooleanButton value="#{obligacion.saldoGastoAdminActualB}"
+						onLabel="#{obligacion.saldoGastoAdminActualS}"
+						offLabel="#{obligacion.saldoGastoAdminActualS}" style="width:60px">
+						<p:ajax update="obligaciones:totalCobro"
+							listener="#{clienteBean.cambioValor3(obligacion)}" />
+					</p:selectBooleanButton>
+				</p:column>
+				<p:column headerText="Valor Total Al Dia">
+					<p:selectBooleanButton value="#{obligacion.valorTotalActualB}"
+						onLabel="#{obligacion.valorTotalActualS}"
+						offLabel="#{obligacion.valorTotalActualS}" style="width:60px">
+						<p:ajax update="obligaciones:totalCobro"
+							listener="#{clienteBean.cambioValor4(obligacion)}" />
+					</p:selectBooleanButton>
+				</p:column>
+				<!-- Valores a cobrar Fin -->
+				
+					</p:dataTable>
+
+
+			<p:panel style="border:none;float:right" id="totalCobro">
+				<p:outputLabel value="Total: " style=" font-size: 1.5em;"></p:outputLabel>
+				<p:outputLabel value="#{clienteBean.valorCobro}"
+					style="    font-size: 1.5em;     color: limegreen;">
+					<f:convertNumber pattern="S/#,##0.00" currencySymbol="$" />
+				</p:outputLabel>
+			</p:panel>
+
+		</h:form>
+		<br></br>
+		<br></br>
+
+
+		<h:form id="tipificacionesNivel">
+			<center>
+				<p:tabMenu activeIndex="#{tipificarBean.i}">
+					<p:menuitem value="CONTACTO EFECTIVO" icon="ui-icon-star" 
+						actionListener="#{tipificarBean.consultarTipificacion(1,'CONTACTO EFECTIVO',0)}">
+						<f:param name="i" value="0" />
+					</p:menuitem>
+
+					<p:menuitem value="CONTACTO NO EFECTIVO" icon="fa fa-fw fa-thumbs-o-down"
+						actionListener="#{tipificarBean.consultarTipificacion(2,'CONTACTO NO EFECTIVO',1)}">
+						<f:param name="i" value="1" />
+					</p:menuitem>
+					
+					<p:menuitem value="NO CONTACTO" icon="fa fa-fw fa-thumbs-down"
+						actionListener="#{tipificarBean.consultarTipificacion(3,'NO CONTACTO',2)}">
+						<f:param name="i" value="2" />
+					</p:menuitem>
+					
+					<p:menuitem value="CASOS ESPECIALES" icon="fa fa-fw fa-bomb"
+						actionListener="#{tipificarBean.consultarTipificacion(4,'CASOS ESPECIALES',3)}">
+						<f:param name="i" value="3" />
+					</p:menuitem>
+				</p:tabMenu>
+			</center>
+		</h:form>
+
+
+
+		<p:panel id="panelTipificaciones">
+			<c:if test="#{tipificarBean.opcionComboTipificacion == 1}">
+				<ui:include src="/pages/tipificacion/tipificar.xhtml" />
+			</c:if>
+		</p:panel>
+
+
+		<style type="text/css">
+.ui-stack {
+	z-index: 1000;
+}
+</style>
+
+
+		<h:form id="frmMenu">
+			<p:stack icon="/resources/demo/caja.png" expanded="true">
+
+				<p:menuitem value="Pagos" icon="/resources/demo/pagos.png"
+					actionListener="#{clienteBean.mostrarPago}"
+					onclick="PF('statusDialog').show();"
+					oncomplete="PF('statusDialog').hide();PF('dlgDatosPagos').show();" />
+
+				<p:menuitem value="Cliente" icon="/resources/demo/cliente.png"
+					actionListener="#{DatosAdicionalesBean.datosAdicionales}"
+					onclick="PF('statusDialog').show();"
+					oncomplete="PF('statusDialog').hide();PF('dlgDatosAdicionales').show();" />
+
+				<p:menuitem value="Teléfono" icon="/resources/demo/telefonos.png"
+					actionListener="#{DatosAdicionalesBean.telefonos}"
+					onclick="PF('statusDialog').show();"
+					oncomplete="PF('statusDialog').hide();PF('dlgTelefono').show();" />
+
+
+				<p:menuitem value="Memo" icon="/resources/demo/memo.png"
+					actionListener="#{clienteBean.memo}"
+					onclick="PF('statusDialog').show();"
+					oncomplete="PF('statusDialog').hide();PF('dlg2').show();" />
+			</p:stack>
+		</h:form>
+
+
+
+	</ui:define>
+</ui:composition>
+
+
+

@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\adiaz\Documents\WorkEclipse\YanbalCRM\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3019922219.index
+1769582427.index
+3550389267.index
+4036198885.index
+1737366879.index
+830748946.index

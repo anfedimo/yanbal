@@ -1,0 +1,16 @@
+
+zsquid:UselessImportCheck"?Remove this unused import 'co.sistemcobro.yanbal.bean.Gestion'.(²ÊÖ¡H™RMINORZ
+CODE_SMELL
+zsquid:UselessImportCheck
+"?Remove this unused import 'co.sistemcobro.yanbal.dao.CuotaDAO'.(¾ŸıHRMINORZ
+CODE_SMELL
+‚squid:UselessImportCheck"GRemove this unused import 'co.sistemcobro.yanbal.ejb.IGestionEJBLocal'.(‡ùà¼HšRMINORZ
+CODE_SMELL
+squid:UselessImportCheck"ARemove this unused import 'co.sistemcobro.yanbal.dao.GestionDAO'.(×™éåşÿÿÿÿH˜RMINORZ
+CODE_SMELL
+}squid:UselessImportCheck"BRemove this unused import 'co.sistemcobro.yanbal.bean.Obligacion'.(Ğ²æHœRMINORZ
+CODE_SMELL
+„squid:UselessImportCheck"DRemove this unused import 'co.sistemcobro.yanbal.bean.ComiteEstado'.(’ßßáÿÿÿÿÿH›RMINORZ
+CODE_SMELL
+xsquid:UselessImportCheck"=Remove this unused import 'co.sistemcobro.yanbal.bean.Cuota'.(ô‡çàHRMINORZ
+CODE_SMELL

@@ -1,0 +1,58 @@
+package co.sistemcobro.yanbal.dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.model.SelectItem;
+import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
+
+public class RazonNoPagoDAO extends BaseDAO {
+
+	public RazonNoPagoDAO(DataSource ds) {
+		super(ds);
+
+	}
+
+	private static Logger logger = Logger.getLogger(ParentescoDAO.class);
+
+	private String SQL_BUSCAR_PARENTESCOS = "select m.nombremotivo ,m.idmotivo from publicar.tipificacion t "
+			+ "inner join publicar.tipificacion_motivo tm on t.idtipificacion=tm.idtipificacion "
+			+ "inner join publicar.motivo m on m.idmotivo=tm.idmotivo where t.idtipificacion=? ";
+
+	public List<SelectItem> buscarRazones(Integer idTipificacion) throws Exception {
+
+		ArrayList<SelectItem> razones = new ArrayList<SelectItem>();
+		SelectItem razon = new SelectItem();
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(SQL_BUSCAR_PARENTESCOS);
+			ps.setInt(1, idTipificacion);
+
+			rs = ps.executeQuery();
+			int t = 1;
+			while (rs.next()) {
+				t = 1;
+				razon = new SelectItem();
+				razon.setLabel(rs.getString(t++));
+				razon.setValue(rs.getInt(t++));
+				razones.add(razon);
+
+			}
+		} catch (SQLException e) {
+			logger.error("Error SQL al tratar de leer  las razones", e);
+			throw new Exception("Error SQL al tratar de leer  las razones", e);
+		} catch (Exception e) {
+			logger.error("Error al tratar de leer  las razones", e);
+			throw new Exception("Error al tratar de leer  las razones: ", e);
+		} finally {
+			closeConexion();
+			logger.info("finalizo dao!");
+		}
+		return razones;
+	}
+
+}

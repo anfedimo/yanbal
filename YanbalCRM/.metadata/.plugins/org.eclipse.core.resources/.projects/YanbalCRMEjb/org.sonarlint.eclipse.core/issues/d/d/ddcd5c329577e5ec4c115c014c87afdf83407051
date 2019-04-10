@@ -1,0 +1,11 @@
+
+~squid:UselessImportCheck">Remove this unused import 'co.sistemcobro.yanbal.dao.MemoDAO'.(äœ°ÑûÿÿÿÿHß‘RMINORZ
+CODE_SMELL
+ƒsquid:UselessImportCheck	"HRemove this unused import 'co.sistemcobro.yanbal.bean.ObligacionYanbal'.(µœ„HŞ‘RMINORZ
+CODE_SMELL
+ksquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒHá‘RMINORZ
+CODE_SMELL
+squid:UselessImportCheck"DRemove this unused import 'co.sistemcobro.yanbal.ejb.IMemoEJBLocal'.(Â±Ê²Hİ‘RMINORZ
+CODE_SMELL
+|squid:UselessImportCheck"<Remove this unused import 'co.sistemcobro.yanbal.bean.Memo'.(¥¡ªúşÿÿÿÿHà‘RMINORZ
+CODE_SMELL

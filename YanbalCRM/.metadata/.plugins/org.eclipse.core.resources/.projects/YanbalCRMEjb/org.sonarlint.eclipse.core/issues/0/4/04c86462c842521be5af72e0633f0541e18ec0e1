@@ -1,0 +1,27 @@
+
+†squid:S1192O"UDefine a constant instead of duplicating this literal "AtrapÃ³ la excepcion" 4 times.(ÑÿÇ‹H§€RCRITICALZ
+CODE_SMELL
+ysquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(û´Ó€H¨€RMAJORZ
+CODE_SMELL
+£squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÜûÇ¨ýÿÿÿÿH©€RMINORZ
+CODE_SMELL
+zsquid:S00112/"FDefine and throw a dedicated exception instead of using a generic one.(¡‹äÍøÿÿÿÿHª€RMAJORZ
+CODE_SMELL
+zsquid:S001122"FDefine and throw a dedicated exception instead of using a generic one.(¾›ºŽúÿÿÿÿH«€RMAJORZ
+CODE_SMELL
+zsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ÜûÇ¨ýÿÿÿÿH¬€RMAJORZ
+CODE_SMELL
+rsquid:S2147P"DCombine this catch with the one at line 78, which has the same body.(”ý¾H­€RMINORZ
+CODE_SMELL
+ssquid:S2147i"ECombine this catch with the one at line 103, which has the same body.(”ý¾H®€RMINORZ
+CODE_SMELL
+—squid:S00116"hRename this field "SQL_BUSCAR_ESTADOS_AUXILIARES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•ìÐ°H¯€RMINORZ
+CODE_SMELL
+squid:S00116:"YRename this field "SQL_INSERT_AUX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ‚•ÛýÿÿÿÿH°€RMINORZ
+CODE_SMELL
+Œsquid:S00116X"XRename this field "SQL_UDATE_AUX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãà£øÿÿÿÿH±€RMINORZ
+CODE_SMELL
+squid:S1858A"Q"SQL_INSERT_AUX" is already a string, there's no need to call "toString()" on it.(Ï¼ÚïH²€RMINORZ
+CODE_SMELL
+~squid:S1858_"P"SQL_UDATE_AUX" is already a string, there's no need to call "toString()" on it.(ö†ÍÕH³€RMINORZ
+CODE_SMELL

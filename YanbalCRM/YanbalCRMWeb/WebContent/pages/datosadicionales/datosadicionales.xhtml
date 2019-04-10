@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<h:form id="frmDatosAdicionales">
+		<p:growl id="msgs" showDetail="true"/>
+		<p:panel id="pnlDatosAdicionales">
+			<p:dataTable var="dato"
+				value="#{datosAdicionalesBean.datosAdicionales}"
+				emptyMessage="No tiene Datos Adicionales" editable="true">
+
+
+				<p:ajax event="rowEdit" listener="#{datosAdicionalesBean.onRowEdit}"
+					update="@form:msgs" />
+				<p:ajax event="rowEditCancel" listener="#{datosAdicionalesBean.onRowCancel}"
+					update="@form:msgs" />
+
+				<p:column headerText="Nombre Base" width="120">
+					<h:outputText value="#{dato.nombreBase}" />
+				</p:column>
+				
+
+				<p:column headerText="Cédula cliente" width="50">
+					<h:outputText value="#{dato.identificacion}" />
+				</p:column>
+
+				<p:column headerText="Nombre cliente" width="70">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{dato.nombre}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{dato.nombre}" style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Apellido cliente" width="70">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{dato.apellido}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{dato.apellido}" style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Dirección cliente" width="90">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{dato.direccion}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{dato.direccion}" style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Email cliente" width="150">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{dato.email}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{dato.email}" style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Telefono cliente" width="50">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{dato.telefono}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{dato.telefono}" style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Celular cliente" width="50">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{dato.celular}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{dato.celular}" style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Número adicional cliente" width="50">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{dato.numeroAdicional}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{dato.numeroAdicional}" style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Editar" width="30">
+					<p:column style="width:35px">
+						<p:rowEditor />
+					</p:column>
+				</p:column>
+
+			</p:dataTable>
+		</p:panel>
+		
+		<center>
+		<p:panelGrid id="pnlNuevoTelefono">
+			<f:facet name="header">
+				<p:row>
+					<p:column colspan="5">Agregar Telefono</p:column>
+				</p:row>
+			</f:facet>
+			<p:row>
+				<p:column>
+					<p:selectOneMenu value="#{datosAdicionalesBean.nuevoTipoTelefono}">
+						<f:selectItem itemLabel="Móvil" itemValue="Móvil" />
+						<f:selectItem itemLabel="Fijo" itemValue="Fijo" />
+					</p:selectOneMenu>
+				</p:column>
+				<p:column>
+					<p:inputText value="#{datosAdicionalesBean.nuevoTelefono}" placeholder="telefono" />
+				</p:column>
+				<p:column>
+					<p:commandButton value="Agregar Telefono" 
+						action="#{datosAdicionalesBean.guardarTelefono}"
+						update="@form:msgs"/>
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		</center>
+		
+		
+		
+		
+	</h:form>
+
+
+</ui:composition>

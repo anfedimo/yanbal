@@ -1,0 +1,193 @@
+package co.sistemcobro.yanbal.dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
+
+import co.sistemcobro.yanbal.bean.ObligacionYanbal;
+
+public class ObligacionExpertisDAO extends BaseDAO {
+
+	public ObligacionExpertisDAO(DataSource ds) {
+		super(ds);
+	}
+	
+	private static Logger logger = Logger.getLogger(ObligacionExpertisDAO.class);
+
+//	private String SQL_BUSCAR_OBLIGACION_CLIENTE = " SELECT DISTINCT idobligacion, idcargue,"
+//			+ " iddeudor, documento, cartera, tipoCartera, codCredito, fecDesembolso, "
+//			+ " producto, SubProducto, moneda, tipCambio, fecOtorgCred, mtoDesembOrig, "
+//			+ " mtoDesembSol, salCapOrg, salCapSol, mtoTotalOrg, mtoTotalSol, SldComercial, "
+//			+ " SldConsumo, SldHipotecario, SldOtros, SldLinea, linFinan, fecUltmPag, impUltPago, "
+//			+ " mtoPagado, fecUltContacto, resultUltContacto, numCuotas, deuSistemaFinan, fecCastigo, "
+//			+ " diasMora, antiguedad, rangoDeuda, canal, esJudicial, marcaAntiguExpertis, marcaCarteraCli, "
+//			+ " convenios, observacion, agenObtCredito, modCredito, sectorista, zonaObtCredito, "
+//			+ " regionObtCredito,responPago, periordicidadPago, credReestructurado, fecCorte, tipoGarantia, "
+//			+ " reportCentrRiesgo,tipVivienda, locCliente, numVisitCampoCastigo, ubicInfoFisica, "
+//			+ " docCustodiados, tipGarantia, tipAvaluo, codGarantia, mtoAvaluoFisico, fecAvaluoFisico, "
+//			+ " valAvaluoAuto, fecAvaluoAuto, fecConstEmpresa, patrimonio, utilidadOperativa, "
+//			+ " ventasContado, numProdCrediticiosFinan, numProdCrediticiosEnt, fecCatigoExpertis, "
+//			+ " indiRef, castigo, marcCartCuenta, califFinal, ultCampOfrecida, valorCuota, origRecursosFin,"
+//			+ " fechacrea, estado"
+//			+ " FROM expertis.obligacion ob "
+//			+ " join expertis.cargue c on c.idcargue = ob.idcargue and c.idbase = (select top 1 max(b.idbase) from  expertis.base b where b.estado = 2 ) "
+//			+ " WHERE ob.documento = ? AND ob.estado = 2 and c.estado = 2 ";
+	public ObligacionYanbal obligacionPorCliente(String idCliente) {
+
+		ObligacionYanbal obligacion = null;
+
+		try {
+			con = ds.getConnection();
+//			ps = con.prepareStatement(SQL_BUSCAR_OBLIGACION_CLIENTE);
+			ps.setString(1, idCliente);
+
+			rs = ps.executeQuery();
+			int t = 1;
+			while (rs.next()) {
+				t = 1;
+				
+				obligacion = new ObligacionYanbal();
+				
+obligacion = new ObligacionYanbal();
+				
+				obligacion.setIdobligacion(rs.getInt(t++));
+				obligacion.setIdcargue(rs.getInt(t++));
+				obligacion.setIddeudor(rs.getInt(t++));
+				obligacion.setDocumento(rs.getString(t++));
+				obligacion.setCartera(rs.getString(t++)); 
+				obligacion.setTipoCartera(rs.getString(t++));
+				obligacion.setCodCredito(rs.getString(t++));
+				obligacion.setFecDesembolso(rs.getTimestamp(t++));
+				obligacion.setProducto(rs.getString(t++));
+				obligacion.setSubProducto(rs.getString(t++));
+				obligacion.setMoneda(rs.getString(t++));
+				obligacion.setTipCambio(rs.getString(t++));
+				obligacion.setFecOtorgCred(rs.getTimestamp(t++));
+				obligacion.setMtoDesembOrig(rs.getDouble(t++));
+				obligacion.setMtoDesembSol(rs.getDouble(t++));
+				obligacion.setSalCapOrg(rs.getDouble(t++));
+				obligacion.setSalCapSol(rs.getDouble(t++)); 
+				obligacion.setMtoTotalOrg(rs.getDouble(t++)); 
+				obligacion.setMtoTotalSol(rs.getDouble(t++));
+				obligacion.setSldComercial(rs.getDouble(t++)); 
+				obligacion.setSldConsumo(rs.getDouble(t++));
+				obligacion.setSldHipotecario(rs.getDouble(t++)); 
+				obligacion.setSldOtros(rs.getDouble(t++));
+				obligacion.setSldLinea(rs.getDouble(t++));
+				obligacion.setLinFinan(rs.getString(t++));
+				obligacion.setFecUltmPag(rs.getTimestamp(t++));
+				obligacion.setImpUltPago(rs.getString(t++)); 
+				obligacion.setMtoPagado(rs.getString(t++));
+				obligacion.setFecUltContacto(rs.getTimestamp(t++));
+				obligacion.setResultUltContacto(rs.getString(t++));
+				obligacion.setNumCuotas(rs.getInt(t++));
+				obligacion.setDeuSistemaFinan(rs.getString(t++));
+				obligacion.setFecCastigo(rs.getTimestamp(t++));
+				obligacion.setDiasMora(rs.getInt(t++));
+				obligacion.setAntiguedad(rs.getString(t++));
+				obligacion.setRangoDeuda(rs.getString(t++));
+				obligacion.setCanal(rs.getString(t++));
+				obligacion.setEsJudicial(rs.getString(t++));
+				obligacion.setMarcaAntiguExpertis(rs.getString(t++));
+				obligacion.setMarcaCarteraCli(rs.getString(t++));
+				obligacion.setConvenios(rs.getString(t++));
+				obligacion.setObservacion(rs.getString(t++));
+				obligacion.setAgenObtCredito(rs.getString(t++));
+				obligacion.setModCredito(rs.getString(t++));
+				obligacion.setSectorista(rs.getString(t++));
+				obligacion.setZonaObtCredito(rs.getString(t++));
+				obligacion.setRegionObtCredito(rs.getString(t++));
+				obligacion.setResponPago(rs.getString(t++));
+				obligacion.setPeriordicidadPago(rs.getString(t++));
+				obligacion.setCredReestructurado(rs.getString(t++));
+				obligacion.setFecCorte(rs.getTimestamp(t++));
+				obligacion.setTipoGarantia(rs.getString(t++));
+				obligacion.setReportCentrRiesgo(rs.getString(t++));
+				obligacion.setTipVivienda(rs.getString(t++));
+				obligacion.setLocCliente(rs.getString(t++));
+				obligacion.setNumVisitCampoCastigo(rs.getString(t++));
+				obligacion.setUbicInfoFisica(rs.getString(t++));
+				obligacion.setDocCustodiados(rs.getString(t++));
+				obligacion.setTipGarantia(rs.getString(t++));
+				obligacion.setTipAvaluo(rs.getString(t++));
+				obligacion.setCodGarantia(rs.getString(t++));
+				obligacion.setMtoAvaluoFisico(rs.getString(t++));
+				obligacion.setFecAvaluoFisico(rs.getTimestamp(t++));
+				obligacion.setValAvaluoAuto(rs.getDouble(t++));
+				obligacion.setFecAvaluoAuto(rs.getTimestamp(t++));
+				obligacion.setFecConstEmpresa(rs.getTimestamp(t++));
+				obligacion.setPatrimonio(rs.getString(t++));
+				obligacion.setUtilidadOperativa(rs.getString(t++));
+				obligacion.setVentasContado(rs.getString(t++));
+				obligacion.setNumProdCrediticiosFinan(rs.getInt(t++)); 
+				obligacion.setNumProdCrediticiosEnt(rs.getInt(t++));
+				obligacion.setFecCatigoExpertis(rs.getTimestamp(t++));
+				obligacion.setIndiRef(rs.getString(t++));
+				obligacion.setCastigo(rs.getString(t++));
+				obligacion.setMarcCartCuenta(rs.getString(t++));
+				obligacion.setCalifFinal(rs.getString(t++));
+				obligacion.setUltCampOfrecida(rs.getString(t++));
+				obligacion.setValorCuota(rs.getString(t++));
+				obligacion.setOrigRecursosFin(rs.getString(t++));
+				obligacion.setFechacrea(rs.getTimestamp(t++));
+				obligacion.setEstado(rs.getInt(t++));
+
+			}
+		} catch (SQLException e) {
+			logger.error("Error SQL al tratar de leer  los Clientes ", e);
+		} catch (Exception e) {
+			logger.error("Error al tratar de leer  los Clientes ", e);
+		} finally {
+			closeConexion();
+			logger.info("finalizo dao!");
+		}
+		return obligacion;
+	}
+	
+//	private String SQL_BUSCAR_OBLIGACIONES_GESTION_CLIENTE =  " select distinct  o.idobligacion, o.codCredito"
+//			+ " from expertis.gestion g "
+//			+ " inner join expertis.obligacion_gestion og on og.idgestion = g.idgestion "
+//			+ " inner join expertis.obligacion o on o.idobligacion = og.idobligacion "
+//			+ " join expertis.cargue c on c.idcargue = o.idcargue  "
+//			+ " and c.idbase = (select top 1 max(b.idbase) "
+//			+ " from  expertis.base b where b.estado = 2 ) where o.documento = ?"
+//			+ " AND o.estado = 2 and c.estado = 2 ";
+
+	public List<ObligacionYanbal> obligacionesGestionCliente(String idCliente) {
+
+		ObligacionYanbal obligacion = null;
+		List<ObligacionYanbal> obligaciones = new ArrayList<>();
+
+		try {
+			con = ds.getConnection();
+//			ps = con.prepareStatement(SQL_BUSCAR_OBLIGACIONES_GESTION_CLIENTE);
+			ps.setString(1, idCliente);
+
+			rs = ps.executeQuery();
+			int t = 1;
+			while (rs.next()) {
+				t = 1;
+				
+				obligacion = new ObligacionYanbal();
+				
+				obligacion.setIdobligacion(rs.getInt(t++));
+				obligacion.setCodCredito(rs.getString(t++));
+				
+				obligaciones.add(obligacion);
+			}
+		} catch (SQLException e) {
+			logger.error("Error SQL al tratar de leer  los Clientes ", e);
+		} catch (Exception e) {
+			logger.error("Error al tratar de leer  los Clientes ", e);
+		} finally {
+			closeConexion();
+			logger.info("finalizo dao!");
+		}
+		return obligaciones;
+	}
+
+}

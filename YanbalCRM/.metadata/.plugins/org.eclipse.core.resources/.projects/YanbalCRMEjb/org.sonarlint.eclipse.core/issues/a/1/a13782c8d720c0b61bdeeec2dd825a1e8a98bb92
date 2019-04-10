@@ -1,0 +1,37 @@
+
+isquid:UselessImportCheck"/Remove this unused import 'java.sql.Timestamp'.(èò½+Hü‹RMINORZ
+CODE_SMELL
+vsquid:S00112°"FDefine and throw a dedicated exception instead of using a generic one.(¶´ìÏH’ŒRMAJORZ
+CODE_SMELL
+dsquid:S1854™"5Remove this useless assignment to local variable "t".(‹êä§H“ŒRMAJORZ
+CODE_SMELL
+zsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¬Å†ÁÿÿÿÿÿH”ŒRMAJORZ
+CODE_SMELL
+„squid:UselessImportCheck"IRemove this unused import 'co.sistemcobro.yanbal.bean.ObligacionGestion'.(Ú©°Hı‹RMINORZ
+CODE_SMELL
+ˆsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(¬Å†ÁÿÿÿÿÿHí‹RCRITICALZ
+CODE_SMELL
+vsquid:S00112×"FDefine and throw a dedicated exception instead of using a generic one.(åÈãøHñ‹RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¼Ğï‹üÿÿÿÿHì‹RMAJORZ
+CODE_SMELL
+dsquid:S1854Ê"5Remove this useless assignment to local variable "t".(µÉ›¾Hù‹RMAJORZ
+CODE_SMELL
+ksquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒHş‹RMINORZ
+CODE_SMELL
+vsquid:S00112Û"FDefine and throw a dedicated exception instead of using a generic one.(¶´ìÏHò‹RMAJORZ
+CODE_SMELL
+{squid:S00112¹"FDefine and throw a dedicated exception instead of using a generic one.(íëÄËşÿÿÿÿHó‹RMAJORZ
+CODE_SMELL
+ysquid:UselessImportCheck">Remove this unused import 'co.sistemcobro.yanbal.bean.Comite'.(”¬ééH€ŒRMINORZ
+CODE_SMELL
+°squid:S1192ª"yDefine a constant instead of duplicating this literal "SQLException Error SQL al tratar de insertar la gestion " 4 times.(ÉÙåùÿÿÿÿHê‹RCRITICALZ
+CODE_SMELL
+isquid:S1854›"5Remove this useless assignment to local variable "t".(·á¤ÉÿÿÿÿÿHø‹RMAJORZ
+CODE_SMELL
+„squid:UselessImportCheck"DRemove this unused import 'co.sistemcobro.yanbal.bean.ComiteEstado'.(’ßßáÿÿÿÿÿHŒRMINORZ
+CODE_SMELL
+~squid:UselessImportCheck">Remove this unused import 'co.sistemcobro.yanbal.bean.Motivo'.(Ñ©²ÄıÿÿÿÿHÿ‹RMINORZ
+CODE_SMELL
+vsquid:S00112¬"FDefine and throw a dedicated exception instead of using a generic one.(åÈãøH•ŒRMAJORZ
+CODE_SMELL
